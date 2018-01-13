@@ -11,8 +11,8 @@ import Foundation
 extension String {
 
     func capitalizingFirstLetter() -> String {
-        let first = String(characters.prefix(1)).capitalized
-        let other = String(characters.dropFirst())
+        let first = "\(self[self.startIndex])".capitalized
+        let other = "\(self.dropFirst())"
         return first + other
     }
 
@@ -30,7 +30,7 @@ extension String {
 
     var uppercaseFirstOfEachWord: String {
         var result = ""
-        for word in (self.characters.split{$0 == " "}.map(String.init)) {
+        for word in (self.characters.split(separator: " ").map(String.init)) {
             result += word.capitalizingFirstLetter() + " "
         }
         return result.trimmingCharacters(in: [" "])
