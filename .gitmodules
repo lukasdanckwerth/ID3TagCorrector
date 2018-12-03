@@ -1,0 +1,3 @@
+[submodule "Submodule/CommandLineHelper"]
+	path = Submodule/CommandLineHelper
+	url = git@gitlab.com:lukasdanckwerth/CommandLineHelper.git
