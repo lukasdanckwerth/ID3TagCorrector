@@ -20,7 +20,7 @@ extension String {
     mutating func removeLines(startingWith: String) -> String {
         var newValue = ""
         for line in self.lines {
-            if !line.hasPrefix(startingWith) && line.trimmed.characters.count > 0 {
+            if !line.hasPrefix(startingWith) && line.trimmed.count > 0 {
                 newValue += line + "\n"
             }
         }
@@ -30,7 +30,7 @@ extension String {
 
     var uppercaseFirstOfEachWord: String {
         var result = ""
-        for word in (self.characters.split(separator: " ").map(String.init)) {
+        for word in (self.split(separator: " ").map(String.init)) {
             result += word.capitalizingFirstLetter() + " "
         }
         return result.trimmingCharacters(in: [" "])

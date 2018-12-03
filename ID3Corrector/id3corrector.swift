@@ -93,7 +93,7 @@ public class ID3Corrector {
 	func titleStartsWithNumber(title: String) -> String {
 		do {
 			let expression = try NSRegularExpression(pattern: "[012345]{0,1}[0123456789]{1}.*",options: .caseInsensitive)
-			let matches = expression.matches(in: title, options: .anchored, range: NSRange(location: 0, length: title.characters.count))
+			let matches = expression.matches(in: title, options: .anchored, range: NSRange(location: 0, length: title.count))
 			return matches.count > 0 ? "true" : "false"
 		} catch _ {
 			return "false"
@@ -239,7 +239,7 @@ public class ID3Corrector {
 	private func featBeforeProd(title: String) -> Bool {
 		do {
 			let expression = try NSRegularExpression(pattern: ".* \\(feat\\. .* \\(Prod\\. by .*",options: .caseInsensitive)
-			let matches = expression.matches(in: title, options: .anchored, range: NSRange(location: 0, length: title.characters.count))
+			let matches = expression.matches(in: title, options: .anchored, range: NSRange(location: 0, length: title.count))
 			return matches.count > 0
 		} catch _ {
 			return false
