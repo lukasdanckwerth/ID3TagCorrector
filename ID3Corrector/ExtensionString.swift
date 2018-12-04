@@ -10,11 +10,7 @@ import Foundation
 
 extension String {
 
-    func capitalizingFirstLetter() -> String {
-        let first = "\(self[self.startIndex])".capitalized
-        let other = "\(self.dropFirst())"
-        return first + other
-    }
+    
 
     // Used for removing comment lines in text files (lines that starts with '#')
     mutating func removeLines(startingWith: String) -> String {
@@ -27,13 +23,11 @@ extension String {
         self = newValue.trimmed
         return self
     }
-
-    var uppercaseFirstOfEachWord: String {
-        var result = ""
-        for word in (self.split(separator: " ").map(String.init)) {
-            result += word.capitalizingFirstLetter() + " "
-        }
-        return result.trimmingCharacters(in: [" "])
+    
+    /// Returns this string with only the very first letter capitalized.
+    var veryFirstLetterCapitalized: String {
+        guard count > 1 else { return self }
+        return "\(self[startIndex])".capitalized + "\(dropFirst())"
     }
 
     /// Trimm whitespaces and remove double whitespaces
@@ -45,7 +39,7 @@ extension String {
         return self.trimmingCharacters(in: ["(", ")", "[", "]"])
     }
 
-    /// Returns an array with containing all words seperated by a whitespace
+    /// Returns an array containing all words (seperated by a whitespace and new line)
     var words: [String] {
         return self.components(separatedBy: .whitespacesAndNewlines)
     }

@@ -10,7 +10,7 @@ import Foundation
 
 func getCorrector(pathFiles: String) -> ID3Corrector {
 
-	let corrector = ID3Corrector()
+	let corrector = ID3Corrector(wrongNotationFilesPath: URL(string: "")!)
 
 	if let contentWrongFeats = getContent(path: pathFiles + "WrongFeat.txt") {
 		if !contentWrongFeats.isEmpty {
@@ -83,6 +83,25 @@ public class ID3Corrector {
 
 	var boolNeedsBracketForProdBy = false
 
+    
+    
+    init(wrongNotationFilesPath url: URL) {
+        
+        func readContent(url: URL) -> String? {
+            do {
+                return try String(contentsOf: url)
+            } catch {
+                return nil
+            }
+        }
+        
+        if var content = readContent(url: url.appendingPathComponent("Replace.txt")) {
+            
+        }
+        
+    }
+    
+    
 	/**
 	Checks whether the given title starts with a number
 
