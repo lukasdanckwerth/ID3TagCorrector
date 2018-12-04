@@ -8,39 +8,6 @@
 
 import Foundation
 
-func getCorrector(pathFiles: String) -> ID3Corrector {
-
-	let corrector = ID3Corrector(wrongNotationFilesPath: URL(string: "")!)
-
-	if let contentWrongFeats = getContent(path: pathFiles + "WrongFeat.txt") {
-		if !contentWrongFeats.isEmpty {
-			corrector.wrongFeats = contentWrongFeats.words
-		}
-	}
-
-	if let contentWrongProdBys = getContent(path: pathFiles + "WrongProdBy.txt") {
-		if !contentWrongProdBys.isEmpty {
-			corrector.wrongProdBys = contentWrongProdBys.words
-		}
-	}
-
-	if let contentWrongWords = getContent(path: pathFiles + "WrongWords.txt") {
-		if !contentWrongWords.isEmpty {
-			corrector.wrongWords = [(String, String)]()
-			for line in contentWrongWords.lines {
-				var lineArray = line.components(separatedBy: ";")
-				if lineArray.count == 2 {
-					corrector.wrongWords!.append((lineArray[0], lineArray[1]))
-				} else if lineArray.count == 1 {
-					corrector.wrongWords!.append((lineArray[0], ""))
-				}
-			}
-		}
-	}
-
-	return corrector
-}
-
 /**
 Provides functions to correct ID3 tags.
 
@@ -74,6 +41,8 @@ public class ID3Corrector {
 	                    "(PROD. BY", "(PROD BY", "(prod."]
 
 	var wrongWords: [(String, String)]?
+    
+    var wrongGenres: [(String, String)]?
 
 
 	// /////////////////////////////////////////////////////////////////
@@ -87,18 +56,31 @@ public class ID3Corrector {
     
     init(wrongNotationFilesPath url: URL) {
         
-        func readContent(url: URL) -> String? {
-            do {
-                return try String(contentsOf: url)
-            } catch {
-                return nil
+        if let content = ID3Corrector.getContent(url: url.appendingPathComponent("WrongFeat.txt")) {
+            wrongFeats = content.words
+        }
+        
+        if let content = ID3Corrector.getContent(url: url.appendingPathComponent("WrongProdBy.txt")) {
+            wrongProdBys = content.words
+        }
+        
+        if let content = ID3Corrector.getContent(url: url.appendingPathComponent("WrongGenres.txt")) {
+            wrongGenres = ID3Corrector.getTuples(content: content, seperator: ":")
+        }
+        
+        if let content = ID3Corrector.getContent(url: url.appendingPathComponent("Replace.txt")) {
+            if !content.isEmpty {
+                wrongWords = [(String, String)]()
+                for line in content.lines {
+                    var lineArray = line.components(separatedBy: ";")
+                    if lineArray.count == 2 {
+                        wrongWords!.append((lineArray[0], lineArray[1]))
+                    } else if lineArray.count == 1 {
+                        wrongWords!.append((lineArray[0], ""))
+                    }
+                }
             }
         }
-        
-        if var content = readContent(url: url.appendingPathComponent("Replace.txt")) {
-            
-        }
-        
     }
     
     
@@ -245,6 +227,15 @@ public class ID3Corrector {
 		}
 		return title
 	}
+    
+    
+    func correct(genre: String) -> String {
+        if let wrongGenre = wrongGenres?.first(where: { $0.0 == genre }) {
+            return wrongGenre.1
+        } else {
+            return genre
+        }
+    }
 
 
 	private func containsFeat(title: String) -> Bool {
@@ -264,4 +255,38 @@ public class ID3Corrector {
 			return false
 		}
 	}
+    
+    
+    // MARK: - Auxiliary static functions
+    
+    /**
+     Returns the content of the file at the given path or nil.
+     - Author: Lukas Danckwerth
+     - Version: 0.1
+     */
+    static func getContent(url: URL) -> String? {
+        do {
+            var content = try String(contentsOf: url)
+            return content.removeLines(startingWith: "#")
+        } catch {
+            return nil
+        }
+    }
+    
+    static func getTuples(content: String, seperator: String) -> [(String, String)] {
+        var tuples = [(String, String)]()
+        
+        for line in content.lines {
+            if !line.hasPrefix("#") {
+                var lineArray = line.components(separatedBy: seperator)
+                if lineArray.count == 2 {
+                    tuples.append((lineArray[0], lineArray[1]))
+                } else if lineArray.count == 1 {
+                    tuples.append((lineArray[0], ""))
+                }
+            }
+        }
+        
+        return tuples
+    }
 }

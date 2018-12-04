@@ -10,7 +10,6 @@
 		806354531DB3C46000E4B78F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806354521DB3C46000E4B78F /* main.swift */; };
 		806354601DB412C100E4B78F /* ID3Corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8063544F1DB3C46000E4B78F /* ID3Corrector */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8072DB2A21B5E596004CF390 /* CommandLineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8072DB2821B5E596004CF390 /* CommandLineHelper.swift */; };
-		808BC9441DB54043005C14B1 /* textfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BC9431DB54043005C14B1 /* textfiles.swift */; };
 		808BC9461DB5437E005C14B1 /* ID3Corrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BC9451DB5437E005C14B1 /* ID3Corrector.swift */; };
 		808BC9481DB54463005C14B1 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BC9471DB54463005C14B1 /* ExtensionString.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		806354521DB3C46000E4B78F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8072DB2821B5E596004CF390 /* CommandLineHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandLineHelper.swift; path = Submodule/CommandLineHelper/CommandLineHelper.swift; sourceTree = "<group>"; };
 		8072DB2921B5E596004CF390 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Submodule/CommandLineHelper/README.md; sourceTree = "<group>"; };
-		808BC9431DB54043005C14B1 /* textfiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textfiles.swift; sourceTree = "<group>"; };
 		808BC9451DB5437E005C14B1 /* ID3Corrector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3Corrector.swift; sourceTree = "<group>"; };
 		808BC9471DB54463005C14B1 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				806354521DB3C46000E4B78F /* main.swift */,
-				808BC9431DB54043005C14B1 /* textfiles.swift */,
 				808BC9451DB5437E005C14B1 /* ID3Corrector.swift */,
 				808BC9471DB54463005C14B1 /* ExtensionString.swift */,
 			);
@@ -156,7 +153,6 @@
 			files = (
 				808BC9481DB54463005C14B1 /* ExtensionString.swift in Sources */,
 				808BC9461DB5437E005C14B1 /* ID3Corrector.swift in Sources */,
-				808BC9441DB54043005C14B1 /* textfiles.swift in Sources */,
 				8072DB2A21B5E596004CF390 /* CommandLineHelper.swift in Sources */,
 				806354531DB3C46000E4B78F /* main.swift in Sources */,
 			);
