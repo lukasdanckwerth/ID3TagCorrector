@@ -10,11 +10,11 @@ import Foundation
 
 // MARK: - Constants
 
-/// Constant with the correct "feat"-notation
-let correctFeat = "(feat."
+/// Constant with the correct "feat" - notation
+let CORRECT_FEAT = "(feat."
 
-/// Constant with the correct "prod. by"-notation
-let correctProdBy = "(Prod. by"
+/// Constant with the correct "prod. by" - notation
+let CORRECT_PROD_BY = "(Prod. by"
 
 /// path to the library folder containing the files
 var wrongNotationFilesPath: URL {
@@ -73,18 +73,6 @@ extension String {
 /// - author: Lukas Danckwerth
 /// - version: 0.1
 public class ID3Corrector {
-    
-    // /////////////////////////////////////////////////////////////////
-    // Constants for right notation
-    // /////////////////////////////////////////////////////////////////
-    
-    /// Constant with the correct "feat"-notation
-    static let correctFeat = "(feat."
-    
-    /// Constant with the correct "prod. by"-notation
-    static let correctProdBy = "(Prod. by"
-    
-    
     
     // /////////////////////////////////////////////////////////////////
     // Arrays with wrong notations
@@ -164,9 +152,9 @@ public class ID3Corrector {
     
     
     func getFeat(title: String) -> String {
-        var tmpFeat = title.components(separatedBy: ID3Corrector.correctFeat)[1]
-        if tmpFeat.contains(ID3Corrector.correctProdBy) {
-            tmpFeat = tmpFeat.components(separatedBy: ID3Corrector.correctProdBy)[0]
+        var tmpFeat = title.components(separatedBy: CORRECT_FEAT)[1]
+        if tmpFeat.contains(CORRECT_PROD_BY) {
+            tmpFeat = tmpFeat.components(separatedBy: CORRECT_PROD_BY)[0]
         }
         return tmpFeat
             .replacingOccurrences(of: " and ", with: " & ")
@@ -178,9 +166,9 @@ public class ID3Corrector {
     
     
     func getProdBy(title: String) -> String {
-        var tmpProdBy = title.components(separatedBy: ID3Corrector.correctProdBy)[1]
-        if tmpProdBy.contains(ID3Corrector.correctFeat) {
-            tmpProdBy = tmpProdBy.components(separatedBy: ID3Corrector.correctFeat)[0]
+        var tmpProdBy = title.components(separatedBy: CORRECT_PROD_BY)[1]
+        if tmpProdBy.contains(CORRECT_FEAT) {
+            tmpProdBy = tmpProdBy.components(separatedBy: CORRECT_FEAT)[0]
         }
         return tmpProdBy
             .replacingOccurrences(of: " and ", with: " & ")
@@ -194,15 +182,15 @@ public class ID3Corrector {
     func getName(title: String) -> String {
         var name = title
         if containsFeat(title: name) {
-            name = name.components(separatedBy: ID3Corrector.correctFeat)[0]
+            name = name.components(separatedBy: CORRECT_FEAT)[0]
         }
         
         if containsProdBy(title: name) {
-            name = name.components(separatedBy: ID3Corrector.correctProdBy)[0]
+            name = name.components(separatedBy: CORRECT_PROD_BY)[0]
         }
         
         if containsFeat(title: name) {
-            name = name.components(separatedBy: ID3Corrector.correctProdBy)[0]
+            name = name.components(separatedBy: CORRECT_PROD_BY)[0]
         }
         
         return name.trimmed
@@ -219,15 +207,15 @@ public class ID3Corrector {
             let feat = getFeat(title: tmpTitle)
             let prodBy = getProdBy(title: tmpTitle)
             let name = getName(title: tmpTitle)
-            tmpTitle = "\(name) \(correctFeat) \(feat)\(boolNeedsBracketForFeat ? ")" : "") \(correctProdBy) \(prodBy)\(boolNeedsBracketForProdBy ? ")" : "")"
+            tmpTitle = "\(name) \(CORRECT_FEAT) \(feat)\(boolNeedsBracketForFeat ? ")" : "") \(CORRECT_PROD_BY) \(prodBy)\(boolNeedsBracketForProdBy ? ")" : "")"
         } else if containsProdBy(title: tmpTitle) {
             let prodBy = getProdBy(title: tmpTitle)
             let name = getName(title: tmpTitle)
-            tmpTitle = "\(name) \(correctProdBy) \(prodBy)\(boolNeedsBracketForProdBy ? ")" : "")"
+            tmpTitle = "\(name) \(CORRECT_PROD_BY) \(prodBy)\(boolNeedsBracketForProdBy ? ")" : "")"
         } else if containsFeat(title: tmpTitle) {
             let feat = getFeat(title: tmpTitle)
             let name = getName(title: tmpTitle)
-            tmpTitle = "\(name) \(correctFeat) \(feat)\(boolNeedsBracketForFeat ? ")" : "")"
+            tmpTitle = "\(name) \(CORRECT_FEAT) \(feat)\(boolNeedsBracketForFeat ? ")" : "")"
         }
         
         
@@ -242,14 +230,14 @@ public class ID3Corrector {
     
     private func correctFeat(title: String) -> String {
         if let wrongFeat = wrongFeats?.first(where: { title.contains(" \($0) ") }) {
-            return title.replacingOccurrences(of: " \(wrongFeat) ", with: " \(correctFeat) ")
+            return title.replacingOccurrences(of: " \(wrongFeat) ", with: " \(CORRECT_FEAT) ")
         }
         return title
     }
     
     private func correctProdBy(title: String) -> String {
         if let wrongProdBy = wrongFeats?.first(where: { title.contains(" \($0) ") }) {
-            return title.replacingOccurrences(of: " \(wrongProdBy) ", with: " \(correctProdBy) ")
+            return title.replacingOccurrences(of: " \(wrongProdBy) ", with: " \(CORRECT_PROD_BY) ")
         }
         return title
     }
@@ -259,11 +247,11 @@ public class ID3Corrector {
     }
     
     private func containsFeat(title: String) -> Bool {
-        return title.contains(ID3Corrector.correctFeat)
+        return title.contains(CORRECT_FEAT)
     }
     
     private func containsProdBy(title: String) -> Bool {
-        return title.contains(ID3Corrector.correctProdBy)
+        return title.contains(CORRECT_PROD_BY)
     }
     
     private func featBeforeProd(title: String) -> Bool {
@@ -312,84 +300,117 @@ public class ID3Corrector {
 }
 
 
-let correctGenreOption = StringOption(name: "correctGenre", helpMessage: "Correcte the passed genre.")
-let correctTitleOption = StringOption(name: "correctTitle", helpMessage: "Correcte the passed title.")
-
-let onlyArtistOption = StringOption(name: "onlyArtist", helpMessage: "Receive only artist.")
-let onlyFeatureOption = StringOption(name: "onlyFeature", helpMessage: "Receive only feature.")
-
-let capitalizeOption = StringOption(name: "capitalize", helpMessage: "Returns the capitalized version of the passed string.")
-
-let startsWithNumber = StringOption(name: "startsWithNumber", helpMessage: "Returns 'true' if the given title starts with a number.")
-
-let replaceOption = StringOption(name: "replace", helpMessage: "Replaces occurences of the string given in the replacementValues argument.")
-
-let capitalizedArgument = Argument(shortFlag: "c", longFlag: "capitalize", help: "Capitalize the output")
-let inArgument = StringCollectionArgument(shortFlag: "i", longFlag: "in", help: "Capitalize the output")
-let outArgument = StringArgument(shortFlag: "o", longFlag: "out", help: "Capitalize the output")
-let trimmArgument = Argument(shortFlag: "t", longFlag: "trimm", help: "Trimms the output.")
-
-replaceOption.requiredArguments = [inArgument, outArgument]
-
-// set configuration of command line tool
-CommandLineTool.configuration = [.needsValidOption, .printHelpForNoSelection]
-
-// execute the command line helper
-CommandLineTool.parseOrExit()
+//let correctGenreOption = StringOption(name: "correctGenre", helpMessage: "Correcte the passed genre.")
+//let correctTitleOption = StringOption(name: "correctTitle", helpMessage: "Correcte the passed title.")
+//
+//let onlyArtistOption = StringOption(name: "onlyArtist", helpMessage: "Receive only artist.")
+//let onlyFeatureOption = StringOption(name: "onlyFeature", helpMessage: "Receive only feature.")
+//
+//let capitalizeOption = StringOption(name: "capitalize", helpMessage: "Returns the capitalized version of the passed string.")
+//
+//let startsWithNumber = StringOption(name: "startsWithNumber", helpMessage: "Returns 'true' if the given title starts with a number.")
+//
+//let replaceOption = StringOption(name: "replace", helpMessage: "Replaces occurences of the string given in the replacementValues argument.")
+//
+//let capitalizedArgument = Argument(shortFlag: "c", longFlag: "capitalize", help: "Capitalize the output")
+//let inArgument = StringCollectionArgument(shortFlag: "i", longFlag: "in", help: "Capitalize the output")
+//let outArgument = StringArgument(shortFlag: "o", longFlag: "out", help: "Capitalize the output")
+//let trimmArgument = Argument(shortFlag: "t", longFlag: "trimm", help: "Trimms the output.")
+//
+//replaceOption.requiredArguments = [inArgument, outArgument]
+//
+//// set configuration of command line tool
+//CommandLineTool.configuration = [.needsValidOption, .printHelpForNoSelection]
+//
+//// execute the command line helper
+//CommandLineTool.parseOrExit()
 
 // reference to the user defaults
-var defaults: UserDefaults? { return UserDefaults(suiteName: "de.aid") }
-
-
-
-var corrector = ID3Corrector(wrongNotationFilesPath: wrongNotationFilesPath)
-
-
-// variable containing the output to print in the end
-var output: String!
-
-switch CommandLineTool.option {
-    
-case correctGenreOption:
-    output = corrector.correct(genre: correctGenreOption.value)
-    
-case correctTitleOption:
-    output = correctTitleOption.value
-    
-case onlyArtistOption:
-    if onlyArtistOption.value.contains(ID3Corrector.correctFeat) {
-        let array = onlyArtistOption.value.components(separatedBy: ID3Corrector.correctFeat)
-        if array.count == 2 {
-            output = array[0].trimmed.trimmedBrackets
-        }
-    }
-    
-case startsWithNumber:
-    
-    let regex = try? NSRegularExpression(pattern: "^[0-9]+", options: .caseInsensitive)
-    let matches = regex?.matches(in: startsWithNumber.value, options: [], range: NSRange(location: 0, length: startsWithNumber.value.count))
-    
-    output = matches?.count ?? 0 > 0 ? "true" : "false"
-    
-case replaceOption:
-    
-    for value in inArgument.values {
-        output = replaceOption.value.replacingOccurrences(of: value, with: "\(outArgument.value!)")
-    }
-    
-default:
-    break
-}
-
-if capitalizedArgument.isSelected {
-    output = output.capitalized
-        .replacingOccurrences(of: " (Feat. ", with: " \(ID3Corrector.correctFeat) ")
-        .replacingOccurrences(of: " (Prod. By ", with: " \(ID3Corrector.correctProdBy) ")
-}
-
-if trimmArgument.isSelected {
-    output = output.trimmed
-}
+//var defaults: UserDefaults? { return UserDefaults(suiteName: "de.aid") }
+//
+//
+//
+//var corrector = ID3Corrector(wrongNotationFilesPath: wrongNotationFilesPath)
+//
+//
+//// variable containing the output to print in the end
+//var output: String!
+//
+//switch CommandLineTool.option {
+//
+//case correctGenreOption:
+//    output = corrector.correct(genre: correctGenreOption.value)
+//
+//case correctTitleOption:
+//    output = correctTitleOption.value
+//
+//case onlyArtistOption:
+//    if onlyArtistOption.value.contains(CORRECT_FEAT) {
+//        let array = onlyArtistOption.value.components(separatedBy: CORRECT_FEAT)
+//        if array.count == 2 {
+//            output = array[0].trimmed.trimmedBrackets
+//        }
+//    }
+//
+//case startsWithNumber:
+//
+//    let regex = try? NSRegularExpression(pattern: "^[0-9]+", options: .caseInsensitive)
+//    let matches = regex?.matches(in: startsWithNumber.value, options: [], range: NSRange(location: 0, length: startsWithNumber.value.count))
+//
+//    output = matches?.count ?? 0 > 0 ? "true" : "false"
+//
+//case replaceOption:
+//
+//    for value in inArgument.values {
+//        output = replaceOption.value.replacingOccurrences(of: value, with: "\(outArgument.value!)")
+//    }
+//
+//default:
+//    break
+//}
+//
+//if capitalizedArgument.isSelected {
+//    output = output.capitalized
+//        .replacingOccurrences(of: " (Feat. ", with: " \(CORRECT_FEAT) ")
+//        .replacingOccurrences(of: " (Prod. By ", with: " \(ID3Corrector.correctProdBy) ")
+//}
+//
+//if trimmArgument.isSelected {
+//    output = output.trimmed
+//}
 
 /// print the given input to the standard output
-FileHandle.standardOutput.write(output.data(using: .utf8)!)
+
+// receive arguments from command line
+let arguments = CommandLine.arguments.dropFirst()
+
+guard arguments.count > 0 else {
+    exit(0)
+}
+
+var output: String? = arguments.last
+if arguments.first == "--correctNames" {
+    output = arguments.last
+
+}
+else if arguments.first == "--correctGenre" {
+    
+    
+}
+else if arguments.first == "--help" {
+    
+    print("""
+    
+    \t--correctNames    Corrects the passed title.
+    \t--correctGenre    Corrects the passed genre.
+
+    \t--help            Prints this manual page.
+
+    """)
+} else {
+    
+}
+
+if let output = output {
+    FileHandle.standardOutput.write(output.data(using: .utf8)!)
+}

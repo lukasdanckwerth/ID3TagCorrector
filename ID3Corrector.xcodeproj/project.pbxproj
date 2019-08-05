@@ -8,29 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		806354531DB3C46000E4B78F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806354521DB3C46000E4B78F /* main.swift */; };
-		806354601DB412C100E4B78F /* ID3Corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8063544F1DB3C46000E4B78F /* ID3Corrector */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		8072DB2A21B5E596004CF390 /* CommandLineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8072DB2821B5E596004CF390 /* CommandLineHelper.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8063545F1DB412A000E4B78F /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = Users/Lukas/.bin;
-			dstSubfolderSpec = 0;
-			files = (
-				806354601DB412C100E4B78F /* ID3Corrector in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8063544F1DB3C46000E4B78F /* ID3Corrector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ID3Corrector; sourceTree = BUILT_PRODUCTS_DIR; };
 		806354521DB3C46000E4B78F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		80642A7622F85E8C00C6AF3F /* build-command-line-tool.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-command-line-tool.sh"; sourceTree = "<group>"; };
-		8072DB2821B5E596004CF390 /* CommandLineHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandLineHelper.swift; path = Submodule/CommandLineHelper/CommandLineHelper.swift; sourceTree = "<group>"; };
-		8072DB2921B5E596004CF390 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Submodule/CommandLineHelper/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,11 +30,9 @@
 		806354461DB3C45F00E4B78F = {
 			isa = PBXGroup;
 			children = (
-				80642A7522F85E3700C6AF3F /* BuildPhases */,
-				8072DB2421B5E415004CF390 /* CommandLineHelper */,
-				806354511DB3C46000E4B78F /* ID3Corrector */,
+				80642A7622F85E8C00C6AF3F /* build-command-line-tool.sh */,
+				806354521DB3C46000E4B78F /* main.swift */,
 				806354501DB3C46000E4B78F /* Products */,
-				808BC93C1DB53871005C14B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,38 +44,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		806354511DB3C46000E4B78F /* ID3Corrector */ = {
-			isa = PBXGroup;
-			children = (
-				806354521DB3C46000E4B78F /* main.swift */,
-			);
-			path = ID3Corrector;
-			sourceTree = "<group>";
-		};
-		80642A7522F85E3700C6AF3F /* BuildPhases */ = {
-			isa = PBXGroup;
-			children = (
-				80642A7622F85E8C00C6AF3F /* build-command-line-tool.sh */,
-			);
-			path = BuildPhases;
-			sourceTree = "<group>";
-		};
-		8072DB2421B5E415004CF390 /* CommandLineHelper */ = {
-			isa = PBXGroup;
-			children = (
-				8072DB2821B5E596004CF390 /* CommandLineHelper.swift */,
-				8072DB2921B5E596004CF390 /* README.md */,
-			);
-			name = CommandLineHelper;
-			sourceTree = "<group>";
-		};
-		808BC93C1DB53871005C14B1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,7 +53,6 @@
 			buildPhases = (
 				8063544B1DB3C45F00E4B78F /* Sources */,
 				8063544C1DB3C45F00E4B78F /* Frameworks */,
-				8063545F1DB412A000E4B78F /* CopyFiles */,
 				80EC7A0F22F85C9600B29FC4 /* build-command-line-tool */,
 			);
 			buildRules = (
@@ -170,7 +118,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/BuildPhases/build-command-line-tool.sh\n";
+			shellScript = "$SRCROOT/build-command-line-tool.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -179,7 +127,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8072DB2A21B5E596004CF390 /* CommandLineHelper.swift in Sources */,
 				806354531DB3C46000E4B78F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
