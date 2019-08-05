@@ -10,8 +10,6 @@
 		806354531DB3C46000E4B78F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806354521DB3C46000E4B78F /* main.swift */; };
 		806354601DB412C100E4B78F /* ID3Corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8063544F1DB3C46000E4B78F /* ID3Corrector */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8072DB2A21B5E596004CF390 /* CommandLineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8072DB2821B5E596004CF390 /* CommandLineHelper.swift */; };
-		808BC9461DB5437E005C14B1 /* ID3Corrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BC9451DB5437E005C14B1 /* ID3Corrector.swift */; };
-		808BC9481DB54463005C14B1 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BC9471DB54463005C14B1 /* ExtensionString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,10 +28,9 @@
 /* Begin PBXFileReference section */
 		8063544F1DB3C46000E4B78F /* ID3Corrector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ID3Corrector; sourceTree = BUILT_PRODUCTS_DIR; };
 		806354521DB3C46000E4B78F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		80642A7622F85E8C00C6AF3F /* build-command-line-tool.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-command-line-tool.sh"; sourceTree = "<group>"; };
 		8072DB2821B5E596004CF390 /* CommandLineHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandLineHelper.swift; path = Submodule/CommandLineHelper/CommandLineHelper.swift; sourceTree = "<group>"; };
 		8072DB2921B5E596004CF390 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Submodule/CommandLineHelper/README.md; sourceTree = "<group>"; };
-		808BC9451DB5437E005C14B1 /* ID3Corrector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3Corrector.swift; sourceTree = "<group>"; };
-		808BC9471DB54463005C14B1 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +47,7 @@
 		806354461DB3C45F00E4B78F = {
 			isa = PBXGroup;
 			children = (
+				80642A7522F85E3700C6AF3F /* BuildPhases */,
 				8072DB2421B5E415004CF390 /* CommandLineHelper */,
 				806354511DB3C46000E4B78F /* ID3Corrector */,
 				806354501DB3C46000E4B78F /* Products */,
@@ -69,10 +67,16 @@
 			isa = PBXGroup;
 			children = (
 				806354521DB3C46000E4B78F /* main.swift */,
-				808BC9451DB5437E005C14B1 /* ID3Corrector.swift */,
-				808BC9471DB54463005C14B1 /* ExtensionString.swift */,
 			);
 			path = ID3Corrector;
+			sourceTree = "<group>";
+		};
+		80642A7522F85E3700C6AF3F /* BuildPhases */ = {
+			isa = PBXGroup;
+			children = (
+				80642A7622F85E8C00C6AF3F /* build-command-line-tool.sh */,
+			);
+			path = BuildPhases;
 			sourceTree = "<group>";
 		};
 		8072DB2421B5E415004CF390 /* CommandLineHelper */ = {
@@ -101,6 +105,7 @@
 				8063544B1DB3C45F00E4B78F /* Sources */,
 				8063544C1DB3C45F00E4B78F /* Frameworks */,
 				8063545F1DB412A000E4B78F /* CopyFiles */,
+				80EC7A0F22F85C9600B29FC4 /* build-command-line-tool */,
 			);
 			buildRules = (
 			);
@@ -134,6 +139,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 806354461DB3C45F00E4B78F;
@@ -146,13 +152,33 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		80EC7A0F22F85C9600B29FC4 /* build-command-line-tool */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"",
+			);
+			name = "build-command-line-tool";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/BuildPhases/build-command-line-tool.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8063544B1DB3C45F00E4B78F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				808BC9481DB54463005C14B1 /* ExtensionString.swift in Sources */,
-				808BC9461DB5437E005C14B1 /* ID3Corrector.swift in Sources */,
 				8072DB2A21B5E596004CF390 /* CommandLineHelper.swift in Sources */,
 				806354531DB3C46000E4B78F /* main.swift in Sources */,
 			);
