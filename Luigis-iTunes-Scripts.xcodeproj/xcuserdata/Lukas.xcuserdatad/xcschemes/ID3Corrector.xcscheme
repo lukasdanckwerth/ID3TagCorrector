@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8063544E1DB3C45F00E4B78F"
-               BuildableName = "ID3Corrector"
-               BlueprintName = "ID3Corrector"
-               ReferencedContainer = "container:ID3Corrector.xcodeproj">
+               BuildableName = "Luigis-iTunes-Scripts"
+               BlueprintName = "Luigis-iTunes-Scripts"
+               ReferencedContainer = "container:Luigis-iTunes-Scripts.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8063544E1DB3C45F00E4B78F"
-            BuildableName = "ID3Corrector"
-            BlueprintName = "ID3Corrector"
-            ReferencedContainer = "container:ID3Corrector.xcodeproj">
+            BuildableName = "Luigis-iTunes-Scripts"
+            BlueprintName = "Luigis-iTunes-Scripts"
+            ReferencedContainer = "container:Luigis-iTunes-Scripts.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8063544E1DB3C45F00E4B78F"
-            BuildableName = "ID3Corrector"
-            BlueprintName = "ID3Corrector"
-            ReferencedContainer = "container:ID3Corrector.xcodeproj">
+            BuildableName = "Luigis-iTunes-Scripts"
+            BlueprintName = "Luigis-iTunes-Scripts"
+            ReferencedContainer = "container:Luigis-iTunes-Scripts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -89,9 +89,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8063544E1DB3C45F00E4B78F"
-            BuildableName = "ID3Corrector"
-            BlueprintName = "ID3Corrector"
-            ReferencedContainer = "container:ID3Corrector.xcodeproj">
+            BuildableName = "Luigis-iTunes-Scripts"
+            BlueprintName = "Luigis-iTunes-Scripts"
+            ReferencedContainer = "container:Luigis-iTunes-Scripts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
