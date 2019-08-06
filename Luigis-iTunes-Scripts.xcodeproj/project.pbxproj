@@ -11,6 +11,43 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802D91FD22FA4783007FC465 /* Remove From Name.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Remove From Name.applescript"; sourceTree = "<group>"; };
+		802D91FE22FA4783007FC465 /* Go to Song.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Go to Song.applescript"; sourceTree = "<group>"; };
+		802D91FF22FA4783007FC465 /* Features from Artist to Title.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Features from Artist to Title.scpt"; sourceTree = "<group>"; };
+		802D920022FA4783007FC465 /* Set Title To Album.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Set Title To Album.scpt"; sourceTree = "<group>"; };
+		802D920222FA4783007FC465 /* Append "(Instrumental)".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Append \"(Instrumental)\".scpt"; sourceTree = "<group>"; };
+		802D920322FA4783007FC465 /* .Append.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = .Append.scpt; sourceTree = "<group>"; };
+		802D920422FA4783007FC465 /* Append "(Remix)".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Append \"(Remix)\".scpt"; sourceTree = "<group>"; };
+		802D920522FA4783007FC465 /* Append ....scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Append ....scpt"; sourceTree = "<group>"; };
+		802D920722FA4783007FC465 /* Rate Selection with 0.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Selection with 0.applescript"; sourceTree = "<group>"; };
+		802D920822FA4783007FC465 /* Rate Selection with 5.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Selection with 5.applescript"; sourceTree = "<group>"; };
+		802D920922FA4783007FC465 /* Rate Selection with 3.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Selection with 3.applescript"; sourceTree = "<group>"; };
+		802D920A22FA4783007FC465 /* Rate Selection with 4.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Selection with 4.applescript"; sourceTree = "<group>"; };
+		802D920B22FA4783007FC465 /* Rate Selection with 1.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Selection with 1.applescript"; sourceTree = "<group>"; };
+		802D920C22FA4783007FC465 /* Rate Selection with 2.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Selection with 2.applescript"; sourceTree = "<group>"; };
+		802D920E22FA4783007FC465 /* Set Genre To "Classical".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Set Genre To \"Classical\".scpt"; sourceTree = "<group>"; };
+		802D920F22FA4783007FC465 /* Set Genre To "Deutscher Hip Hop".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Set Genre To \"Deutscher Hip Hop\".scpt"; sourceTree = "<group>"; };
+		802D921022FA4783007FC465 /* Set Genre To "Hip Hop".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Set Genre To \"Hip Hop\".scpt"; sourceTree = "<group>"; };
+		802D921122FA4783007FC465 /* Set Genre To "Pop".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Set Genre To \"Pop\".scpt"; sourceTree = "<group>"; };
+		802D921222FA4783007FC465 /* Set Genre To "Instrumental".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Set Genre To \"Instrumental\".scpt"; sourceTree = "<group>"; };
+		802D921322FA4783007FC465 /* Set Genre To "Rhythm & Blues".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Set Genre To \"Rhythm & Blues\".scpt"; sourceTree = "<group>"; };
+		802D921422FA4783007FC465 /* Set Genre To "Techno".scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Set Genre To \"Techno\".scpt"; sourceTree = "<group>"; };
+		802D921522FA4783007FC465 /* .Set Genre.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ".Set Genre.scpt"; sourceTree = "<group>"; };
+		802D921622FA4783007FC465 /* Capitalize Name.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Capitalize Name.scpt"; sourceTree = "<group>"; };
+		802D921722FA4783007FC465 /* Replace.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = Replace.applescript; sourceTree = "<group>"; };
+		802D921922FA4783007FC465 /* Rate Current with 4.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Current with 4.applescript"; sourceTree = "<group>"; };
+		802D921A22FA4783007FC465 /* Rate Current with 1.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Current with 1.applescript"; sourceTree = "<group>"; };
+		802D921B22FA4783007FC465 /* Rate Current with 2.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Current with 2.applescript"; sourceTree = "<group>"; };
+		802D921C22FA4783007FC465 /* Rate Current with 0.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Current with 0.applescript"; sourceTree = "<group>"; };
+		802D921D22FA4783007FC465 /* Rate Current with 5.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Current with 5.applescript"; sourceTree = "<group>"; };
+		802D921E22FA4783007FC465 /* Rate Current with 3.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Rate Current with 3.applescript"; sourceTree = "<group>"; };
+		802D921F22FA4783007FC465 /* Correct Names.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Correct Names.applescript"; sourceTree = "<group>"; };
+		802D922022FA4783007FC465 /* Add to begining.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Add to begining.applescript"; sourceTree = "<group>"; };
+		802D922122FA4783007FC465 /* Remove First Letters Of Name.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Remove First Letters Of Name.scpt"; sourceTree = "<group>"; };
+		802D922222FA4783007FC465 /* Number Tracks.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Number Tracks.applescript"; sourceTree = "<group>"; };
+		802D922322FA4783007FC465 /* Add to begining of Album.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Add to begining of Album.applescript"; sourceTree = "<group>"; };
+		802D922422FA4783007FC465 /* Correct Genre.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Correct Genre.scpt"; sourceTree = "<group>"; };
+		802D922522FA4783007FC465 /* Set Year.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = "Set Year.applescript"; sourceTree = "<group>"; };
 		8063544F1DB3C46000E4B78F /* Luigis-iTunes-Scripts */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Luigis-iTunes-Scripts"; sourceTree = BUILT_PRODUCTS_DIR; };
 		806354521DB3C46000E4B78F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		80642A7622F85E8C00C6AF3F /* build-command-line-tool.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-command-line-tool.sh"; sourceTree = "<group>"; };
@@ -27,11 +64,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		806354461DB3C45F00E4B78F = {
+		802D91FA22FA46D8007FC465 /* AppleScripts */ = {
+			isa = PBXGroup;
+			children = (
+				802D920122FA4783007FC465 /* Append */,
+				802D921822FA4783007FC465 /* RateCurrent */,
+				802D920622FA4783007FC465 /* RateSelection */,
+				802D920D22FA4783007FC465 /* SetGenre */,
+				802D922322FA4783007FC465 /* Add to begining of Album.applescript */,
+				802D922022FA4783007FC465 /* Add to begining.applescript */,
+				802D921622FA4783007FC465 /* Capitalize Name.scpt */,
+				802D922422FA4783007FC465 /* Correct Genre.scpt */,
+				802D921F22FA4783007FC465 /* Correct Names.applescript */,
+				802D91FF22FA4783007FC465 /* Features from Artist to Title.scpt */,
+				802D91FE22FA4783007FC465 /* Go to Song.applescript */,
+				802D922222FA4783007FC465 /* Number Tracks.applescript */,
+				802D922122FA4783007FC465 /* Remove First Letters Of Name.scpt */,
+				802D91FD22FA4783007FC465 /* Remove From Name.applescript */,
+				802D921722FA4783007FC465 /* Replace.applescript */,
+				802D920022FA4783007FC465 /* Set Title To Album.scpt */,
+				802D922522FA4783007FC465 /* Set Year.applescript */,
+			);
+			path = AppleScripts;
+			sourceTree = "<group>";
+		};
+		802D91FB22FA46E2007FC465 /* CommandLineTool */ = {
+			isa = PBXGroup;
+			children = (
+				806354521DB3C46000E4B78F /* main.swift */,
+			);
+			path = CommandLineTool;
+			sourceTree = "<group>";
+		};
+		802D91FC22FA474F007FC465 /* Luigis-iTunes-Scripts */ = {
 			isa = PBXGroup;
 			children = (
 				80642A7622F85E8C00C6AF3F /* build-command-line-tool.sh */,
-				806354521DB3C46000E4B78F /* main.swift */,
+				802D91FA22FA46D8007FC465 /* AppleScripts */,
+				802D91FB22FA46E2007FC465 /* CommandLineTool */,
+			);
+			path = "Luigis-iTunes-Scripts";
+			sourceTree = "<group>";
+		};
+		802D920122FA4783007FC465 /* Append */ = {
+			isa = PBXGroup;
+			children = (
+				802D920222FA4783007FC465 /* Append "(Instrumental)".scpt */,
+				802D920322FA4783007FC465 /* .Append.scpt */,
+				802D920422FA4783007FC465 /* Append "(Remix)".scpt */,
+				802D920522FA4783007FC465 /* Append ....scpt */,
+			);
+			path = Append;
+			sourceTree = "<group>";
+		};
+		802D920622FA4783007FC465 /* RateSelection */ = {
+			isa = PBXGroup;
+			children = (
+				802D920722FA4783007FC465 /* Rate Selection with 0.applescript */,
+				802D920822FA4783007FC465 /* Rate Selection with 5.applescript */,
+				802D920922FA4783007FC465 /* Rate Selection with 3.applescript */,
+				802D920A22FA4783007FC465 /* Rate Selection with 4.applescript */,
+				802D920B22FA4783007FC465 /* Rate Selection with 1.applescript */,
+				802D920C22FA4783007FC465 /* Rate Selection with 2.applescript */,
+			);
+			path = RateSelection;
+			sourceTree = "<group>";
+		};
+		802D920D22FA4783007FC465 /* SetGenre */ = {
+			isa = PBXGroup;
+			children = (
+				802D920E22FA4783007FC465 /* Set Genre To "Classical".scpt */,
+				802D920F22FA4783007FC465 /* Set Genre To "Deutscher Hip Hop".scpt */,
+				802D921022FA4783007FC465 /* Set Genre To "Hip Hop".scpt */,
+				802D921122FA4783007FC465 /* Set Genre To "Pop".scpt */,
+				802D921222FA4783007FC465 /* Set Genre To "Instrumental".scpt */,
+				802D921322FA4783007FC465 /* Set Genre To "Rhythm & Blues".scpt */,
+				802D921422FA4783007FC465 /* Set Genre To "Techno".scpt */,
+				802D921522FA4783007FC465 /* .Set Genre.scpt */,
+			);
+			path = SetGenre;
+			sourceTree = "<group>";
+		};
+		802D921822FA4783007FC465 /* RateCurrent */ = {
+			isa = PBXGroup;
+			children = (
+				802D921922FA4783007FC465 /* Rate Current with 4.applescript */,
+				802D921A22FA4783007FC465 /* Rate Current with 1.applescript */,
+				802D921B22FA4783007FC465 /* Rate Current with 2.applescript */,
+				802D921C22FA4783007FC465 /* Rate Current with 0.applescript */,
+				802D921D22FA4783007FC465 /* Rate Current with 5.applescript */,
+				802D921E22FA4783007FC465 /* Rate Current with 3.applescript */,
+			);
+			path = RateCurrent;
+			sourceTree = "<group>";
+		};
+		806354461DB3C45F00E4B78F = {
+			isa = PBXGroup;
+			children = (
+				802D91FC22FA474F007FC465 /* Luigis-iTunes-Scripts */,
 				806354501DB3C46000E4B78F /* Products */,
 			);
 			sourceTree = "<group>";
