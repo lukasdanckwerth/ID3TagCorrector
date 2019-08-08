@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "805A261022FA4C5800254033"
-               BuildableName = "CorrectGenre"
-               BlueprintName = "CorrectGenre"
+               BlueprintIdentifier = "80D6CFA922FCA411004454F6"
+               BuildableName = "tag-corrector"
+               BlueprintName = "tag-corrector"
                ReferencedContainer = "container:ID3Corrector.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "805A261022FA4C5800254033"
-            BuildableName = "CorrectGenre"
-            BlueprintName = "CorrectGenre"
+            BlueprintIdentifier = "80D6CFA922FCA411004454F6"
+            BuildableName = "tag-corrector"
+            BlueprintName = "tag-corrector"
             ReferencedContainer = "container:ID3Corrector.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,12 +55,22 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "805A261022FA4C5800254033"
-            BuildableName = "CorrectGenre"
-            BlueprintName = "CorrectGenre"
+            BlueprintIdentifier = "80D6CFA922FCA411004454F6"
+            BuildableName = "tag-corrector"
+            BlueprintName = "tag-corrector"
             ReferencedContainer = "container:ID3Corrector.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "--correctGenre"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "hip-hop"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -74,9 +84,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "805A261022FA4C5800254033"
-            BuildableName = "CorrectGenre"
-            BlueprintName = "CorrectGenre"
+            BlueprintIdentifier = "80D6CFA922FCA411004454F6"
+            BuildableName = "tag-corrector"
+            BlueprintName = "tag-corrector"
             ReferencedContainer = "container:ID3Corrector.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

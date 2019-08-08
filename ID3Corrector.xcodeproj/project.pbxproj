@@ -6,25 +6,68 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		80D6CFAD22FCA411004454F6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
+		80D6CFB222FCA4DE004454F6 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */; };
+		80D6CFB622FCAA94004454F6 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB522FCAA94004454F6 /* Help.swift */; };
+		80D6CFB822FCABEE004454F6 /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB722FCABEE004454F6 /* ExtensionFileManager.swift */; };
+		80D6CFB922FCB041004454F6 /* ID3Corrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806354521DB3C46000E4B78F /* ID3Corrector.swift */; };
+		80D6CFC122FCBB26004454F6 /* ID3CorrectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */; };
+		80D6CFC622FCBB72004454F6 /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB722FCABEE004454F6 /* ExtensionFileManager.swift */; };
+		80D6CFC722FCBB72004454F6 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */; };
+		80D6CFC822FCBB72004454F6 /* ID3Corrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806354521DB3C46000E4B78F /* ID3Corrector.swift */; };
+		80D6CFC922FCBB72004454F6 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB522FCAA94004454F6 /* Help.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		80D6CFA822FCA411004454F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		805A260722FA4A1B00254033 /* CorrectGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectGenre.swift; sourceTree = "<group>"; };
-		806354521DB3C46000E4B78F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		806354521DB3C46000E4B78F /* ID3Corrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector.swift; sourceTree = "<group>"; };
+		80D6CFAA22FCA411004454F6 /* tag-corrector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "tag-corrector"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D6CFAC22FCA411004454F6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
+		80D6CFB522FCAA94004454F6 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		80D6CFB722FCABEE004454F6 /* ExtensionFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFileManager.swift; sourceTree = "<group>"; };
+		80D6CFBE22FCBB26004454F6 /* ID3CorrectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ID3CorrectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3CorrectorTests.swift; sourceTree = "<group>"; };
+		80D6CFC222FCBB26004454F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXGroup section */
-		802D91FB22FA46E2007FC465 /* CommandLineTool */ = {
-			isa = PBXGroup;
-			children = (
-				806354521DB3C46000E4B78F /* main.swift */,
-				805A260722FA4A1B00254033 /* CorrectGenre.swift */,
+/* Begin PBXFrameworksBuildPhase section */
+		80D6CFA722FCA411004454F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
-			path = CommandLineTool;
-			sourceTree = "<group>";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80D6CFBB22FCBB26004454F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
 		802D91FC22FA474F007FC465 /* ID3Corrector */ = {
 			isa = PBXGroup;
 			children = (
-				802D91FB22FA46E2007FC465 /* CommandLineTool */,
+				80D6CFB722FCABEE004454F6 /* ExtensionFileManager.swift */,
+				80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */,
+				806354521DB3C46000E4B78F /* ID3Corrector.swift */,
+				80D6CFB522FCAA94004454F6 /* Help.swift */,
 			);
 			path = ID3Corrector;
 			sourceTree = "<group>";
@@ -33,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				802D91FC22FA474F007FC465 /* ID3Corrector */,
+				80D6CFAB22FCA411004454F6 /* tag-corrector */,
+				80D6CFBF22FCBB26004454F6 /* ID3CorrectorTests */,
 				806354501DB3C46000E4B78F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,36 +85,164 @@
 		806354501DB3C46000E4B78F /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				80D6CFAA22FCA411004454F6 /* tag-corrector */,
+				80D6CFBE22FCBB26004454F6 /* ID3CorrectorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+		80D6CFAB22FCA411004454F6 /* tag-corrector */ = {
+			isa = PBXGroup;
+			children = (
+				80D6CFAC22FCA411004454F6 /* main.swift */,
+			);
+			path = "tag-corrector";
+			sourceTree = "<group>";
+		};
+		80D6CFBF22FCBB26004454F6 /* ID3CorrectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */,
+				80D6CFC222FCBB26004454F6 /* Info.plist */,
+			);
+			path = ID3CorrectorTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80D6CFA922FCA411004454F6 /* tag-corrector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80D6CFAE22FCA411004454F6 /* Build configuration list for PBXNativeTarget "tag-corrector" */;
+			buildPhases = (
+				80D6CFA622FCA411004454F6 /* Sources */,
+				80D6CFA722FCA411004454F6 /* Frameworks */,
+				80D6CFA822FCA411004454F6 /* CopyFiles */,
+				80D6CFB422FCA682004454F6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tag-corrector";
+			productName = "tag-corrector";
+			productReference = 80D6CFAA22FCA411004454F6 /* tag-corrector */;
+			productType = "com.apple.product-type.tool";
+		};
+		80D6CFBD22FCBB26004454F6 /* ID3CorrectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "ID3CorrectorTests" */;
+			buildPhases = (
+				80D6CFBA22FCBB26004454F6 /* Sources */,
+				80D6CFBB22FCBB26004454F6 /* Frameworks */,
+				80D6CFBC22FCBB26004454F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ID3CorrectorTests;
+			productName = ID3CorrectorTests;
+			productReference = 80D6CFBE22FCBB26004454F6 /* ID3CorrectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		806354471DB3C45F00E4B78F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Lukas Danckwerth";
+				TargetAttributes = {
+					80D6CFA922FCA411004454F6 = {
+						CreatedOnToolsVersion = 10.3;
+						ProvisioningStyle = Automatic;
+					};
+					80D6CFBD22FCBB26004454F6 = {
+						CreatedOnToolsVersion = 10.3;
+						DevelopmentTeam = 9355YBP8MQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 8063544A1DB3C45F00E4B78F /* Build configuration list for PBXProject "ID3Corrector" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 806354461DB3C45F00E4B78F;
 			productRefGroup = 806354501DB3C46000E4B78F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				80D6CFA922FCA411004454F6 /* tag-corrector */,
+				80D6CFBD22FCBB26004454F6 /* ID3CorrectorTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80D6CFBC22FCBB26004454F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80D6CFB422FCA682004454F6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f /Users/lukas/bin/tag-corrector ]; then\n    rm -rf /Users/lukas/bin/tag-corrector\nfi\n\nln -s $TARGET_BUILD_DIR/tag-corrector /Users/lukas/bin/tag-corrector\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80D6CFA622FCA411004454F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D6CFB922FCB041004454F6 /* ID3Corrector.swift in Sources */,
+				80D6CFB222FCA4DE004454F6 /* ExtensionString.swift in Sources */,
+				80D6CFB822FCABEE004454F6 /* ExtensionFileManager.swift in Sources */,
+				80D6CFAD22FCA411004454F6 /* main.swift in Sources */,
+				80D6CFB622FCAA94004454F6 /* Help.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D6CFBA22FCBB26004454F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D6CFC622FCBB72004454F6 /* ExtensionFileManager.swift in Sources */,
+				80D6CFC722FCBB72004454F6 /* ExtensionString.swift in Sources */,
+				80D6CFC822FCBB72004454F6 /* ID3Corrector.swift in Sources */,
+				80D6CFC922FCBB72004454F6 /* Help.swift in Sources */,
+				80D6CFC122FCBB26004454F6 /* ID3CorrectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		806354541DB3C46000E4B78F /* Debug */ = {
@@ -179,6 +352,86 @@
 			};
 			name = Release;
 		};
+		80D6CFAF22FCA411004454F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		80D6CFB022FCA411004454F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		80D6CFC422FCBB26004454F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9355YBP8MQ;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ID3CorrectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = de.aid.ID3CorrectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		80D6CFC522FCBB26004454F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9355YBP8MQ;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ID3CorrectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = de.aid.ID3CorrectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -187,6 +440,24 @@
 			buildConfigurations = (
 				806354541DB3C46000E4B78F /* Debug */,
 				806354551DB3C46000E4B78F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80D6CFAE22FCA411004454F6 /* Build configuration list for PBXNativeTarget "tag-corrector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D6CFAF22FCA411004454F6 /* Debug */,
+				80D6CFB022FCA411004454F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "ID3CorrectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D6CFC422FCBB26004454F6 /* Debug */,
+				80D6CFC522FCBB26004454F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

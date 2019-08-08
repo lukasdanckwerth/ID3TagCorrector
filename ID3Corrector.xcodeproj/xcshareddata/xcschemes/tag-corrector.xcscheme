@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1030"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "805A25F222FA496500254033"
-               BuildableName = "Luigis-iTunes-Scripts.xctest"
-               BlueprintName = "Luigis-iTunes-Scripts"
+               BlueprintIdentifier = "80D6CFA922FCA411004454F6"
+               BuildableName = "tag-corrector"
+               BlueprintName = "tag-corrector"
                ReferencedContainer = "container:ID3Corrector.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "805A25F222FA496500254033"
-            BuildableName = "Luigis-iTunes-Scripts.xctest"
-            BlueprintName = "Luigis-iTunes-Scripts"
+            BlueprintIdentifier = "80D6CFA922FCA411004454F6"
+            BuildableName = "tag-corrector"
+            BlueprintName = "tag-corrector"
             ReferencedContainer = "container:ID3Corrector.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -42,9 +42,9 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -55,26 +55,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "805A25F222FA496500254033"
-            BuildableName = "Luigis-iTunes-Scripts.xctest"
-            BlueprintName = "Luigis-iTunes-Scripts"
+            BlueprintIdentifier = "80D6CFA922FCA411004454F6"
+            BuildableName = "tag-corrector"
+            BlueprintName = "tag-corrector"
             ReferencedContainer = "container:ID3Corrector.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-t"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "&quot;irgendwas Feat. Jonny Depp&quot;"
-            isEnabled = "NO">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -88,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "805A25F222FA496500254033"
-            BuildableName = "Luigis-iTunes-Scripts.xctest"
-            BlueprintName = "Luigis-iTunes-Scripts"
+            BlueprintIdentifier = "80D6CFA922FCA411004454F6"
+            BuildableName = "tag-corrector"
+            BlueprintName = "tag-corrector"
             ReferencedContainer = "container:ID3Corrector.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

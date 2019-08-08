@@ -4,22 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CorrectGenre.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>ID3Corrector.xcscheme</key>
+		<key>--correctGenre.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Luigis-iTunes-Scripts-Tests.xcscheme_^#shared#^_</key>
+		<key>ID3CorrectorTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 		<key>build-command-line-tool.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>tag-corrector.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -33,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>8063544E1DB3C45F00E4B78F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80D6CFA922FCA411004454F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
