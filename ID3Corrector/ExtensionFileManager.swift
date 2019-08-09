@@ -11,6 +11,34 @@ import Foundation
 extension FileManager {
     
     
+    // MARK: - URLs
+    
+    /// Reference to the `URL` of the main directory.
+    static let mainDirectoryURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".tag-corrector", isDirectory: true)
+    
+    /// Reference to the file containing genre corrections.
+    static var genresFile = fileURL(for: "incorrect-genres")
+    
+    /// Reference to the file containing incorrect `"feat."` notations.
+    static var featFile = fileURL(for: "incorrect-features")
+    
+    /// Reference to the file containing incorrect `"Prod. by"` notations.
+    static var prodByFile = fileURL(for: "incorrect-produced-by")
+    
+    /// Reference to the file containing replacements of words.
+    static var replacementsFile = fileURL(for: "replacements")
+    
+    /// Reference to the file containing words to remove from names.
+    static var removementsFile = fileURL(for: "removements")
+    
+    
+    // MARK: - Functions
+    
+    /// Returns a `URL` to the text file (`".txt"`) with the given name in the main directory.
+    static func fileURL(for fileName: String) -> URL {
+        return mainDirectoryURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+    }
+    
     /// Creates the directory at the given `URL` if it doesn't already exist.
     func createDirectoryIfNotExisting(_ directoryURL: URL) {
         if !fileExists(atPath: directoryURL.path) {

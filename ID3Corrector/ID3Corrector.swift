@@ -8,30 +8,9 @@
 import Foundation
 
 
-// MARK: - Constants
+// MARK: - ID3Corrector
 
-struct Constants {
-    
-    
-    /// Reference to the `URL` of the main directory.
-    static let mainDirectoryURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".tag-corrector", isDirectory: true)
-    
-    /// Reference to the file containing genre corrections.
-    static var genresFile = mainDirectoryURL.appendingPathComponent("genres")
-    
-    /// Reference to the file containing incorrect `"feat."` notations.
-    static var featFile = mainDirectoryURL.appendingPathComponent("feat")
-    
-    /// Reference to the file containing incorrect `"Prod. by"` notations.
-    static var prodByFile = mainDirectoryURL.appendingPathComponent("prod-by")
-    
-    /// Reference to the file containing replacements of words.
-    static var replacementsFile = mainDirectoryURL.appendingPathComponent("replacements")
-    
-}
-
-
-class ID3Corrector {
+struct ID3Corrector {
     
     
     // MARK: - Statics
@@ -45,17 +24,17 @@ class ID3Corrector {
     
     // MARK: - Properties
     
-    /// The map of incorrect genres with their correction.
-    static var genres = keyValuePairs(at: Constants.genresFile)
+    /// A dictionary of incorrect genres with their correction.
+    static var genres = keyValuePairs(at: FileManager.genresFile)
     
     /// A map containing key value pairs with words to replace.
-    static var replacements = keyValuePairs(at: Constants.replacementsFile)
+    static var replacements = keyValuePairs(at: FileManager.replacementsFile)
     
-    /// A collection of wrong `feat.` notations.
-    static var feats = lines(at: Constants.featFile) + [feat]
+    /// A collection of incorrect `feat.` notations.
+    static var feats = lines(at: FileManager.featFile) + [feat]
     
-    /// A collection of wrong `"Prod. by"` notations.
-    static var producedBy = lines(at: Constants.prodByFile) + [prodBy]
+    /// A collection of incorrect `"Prod. by"` notations.
+    static var producedBy = lines(at: FileManager.prodByFile) + [prodBy]
     
     
     // MARK: - Correction Functionality
@@ -74,11 +53,20 @@ class ID3Corrector {
             return comps.compactMap(correctName).joined(separator: " - ")
         }
         
-        var name = name.onlyParenthesis
+        var name = name.reaplacingBrackets
         name = replaceFeat(name: &name)
         name = replaceProducedBy(name: &name)
+        name = name.replacing(replacements)
         
         return name
+    }
+    
+    /// Removes all occurences of the words from the file at the given `URL` in the given name.
+    static func remove(wordsAt wordlistPath: String, in name: String) -> String {
+        let url = URL(fileURLWithPath: wordlistPath)
+        return lines(at: url).reduce(name, { name, word in
+            name.replacingOccurrences(of: word, with: "")
+        }).trimmed
     }
     
     
@@ -107,7 +95,7 @@ class ID3Corrector {
     
     /// Returns the lines of the file at the given `URL`.
     static func lines(at url: URL) -> [String] {
-        return content(at: url)?.trimmed.lines.filter({ !$0.isEmpty && !$0.hasPrefix("#") }) ?? []
+        return content(at: url)?.lines.cleaned ?? []
     }
     
     /// Read key value file.

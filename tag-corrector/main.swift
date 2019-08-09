@@ -15,8 +15,9 @@ import Foundation
 var arguments = CommandLine.arguments.dropFirst()
 
 // returns the next arguments
-func nextArgument(or message: String) -> String {
+func nextArgument(onError message: String) -> String {
     
+    // guard the existing of an argument
     guard let argumemt = arguments.popFirst() else {
         exit(message, withHelpMessage: true)
     }
@@ -28,26 +29,34 @@ func nextArgument(or message: String) -> String {
 // MARK: - Preconditions
 
 // receive command
-let command = nextArgument(or: "No arguments given")
+let command = nextArgument(onError: "No arguments given")
 
 // create main directory if it doesn't exist
-FileManager.default.createDirectoryIfNotExisting(Constants.mainDirectoryURL)
+FileManager.default.createDirectoryIfNotExisting(FileManager.mainDirectoryURL)
 
 
 var output: String?
 
+
 // MARK: - Switch Command
 
 switch command {
-case "--correctGenre":
+case "correctGenre":
     
-    let genre = nextArgument(or: "No genre specified")
+    let genre = nextArgument(onError: "No genre specified")
     output = ID3Corrector.correctGenre(genre)
     
-case "--correctName":
+case "correctName":
     
-    let name = nextArgument(or: "No name specified")
+    let name = nextArgument(onError: "No name specified")
     output = ID3Corrector.correctGenre(name)
+    
+case "remove":
+    
+    let filePath = nextArgument(onError: "No path to text file specified")
+    let name = nextArgument(onError: "No name specified")
+    
+    output = ID3Corrector.remove(wordsAt: filePath, in: name)
     
 case "--help", "-h":
     
@@ -56,6 +65,8 @@ case "--help", "-h":
 default:
     
     exit("Unknown argument '\(command)'", withHelpMessage: true)
+    
 }
+
 
 print(output ?? "", terminator: "")

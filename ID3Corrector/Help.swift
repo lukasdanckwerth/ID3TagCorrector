@@ -16,10 +16,11 @@ usage: tag-corrector <command> [<args>]
 
 COMMANDS:
 
-\("   ")\("--correctGenre".bold) <GENRE>  Corrects the passed genre
-\("   ")\("--correctName".bold) <NAME>    Corrects the passed name
+\("   ")\("correctGenre".bold) <genre>     Corrects the passed genre
+\("   ")\("correctName".bold) <name>       Corrects the passed name
+\("   ")\("remove".bold) <file> <name>     Removes all words in the given file from the given name
 
-\("   ")\("--help".bold)                  Print this help text and exit
+\("   ")\("--help".bold)                   Print this help text and exit
 
 """
 
@@ -27,7 +28,7 @@ COMMANDS:
 func exit(_ message: String, exitCode: Int32 = EXIT_SUCCESS, withHelpMessage flag: Bool = false) -> Never {
     
     if flag {
-        print(message, "\n\nPass '--help' for a list of available commands")
+        print(message, "\n\nPass '--help' for a list of available commands\n")
     } else {
         print(message)
     }
