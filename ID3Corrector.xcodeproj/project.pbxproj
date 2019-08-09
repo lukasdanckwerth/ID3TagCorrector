@@ -199,7 +199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -rf \"/Users/lukas/bin/tag-corrector\"\nln -s $TARGET_BUILD_DIR/tag-corrector /Users/lukas/bin/tag-corrector\n";
+			shellScript = "\ncp $TARGET_BUILD_DIR/tag-corrector\ncp -R $TARGET_BUILD_DIR/tag_corrector.swiftmodule $PROJECT_DIR/bin\n\nchmod +x $TARGET_BUILD_DIR/tag-corrector\n\nrm -rf \"/Users/lukas/bin/tag-corrector\"\nln -s $PROJECT_DIR/bin/tag-corrector /Users/lukas/bin/tag-corrector\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
