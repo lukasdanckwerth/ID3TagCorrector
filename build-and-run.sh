@@ -18,6 +18,7 @@ if [ ! -d "$A_REPOSITORY_PATH/.git" ]; then
     echo "$A_REPOSITORY_PATH/.git doesn't exist"; exit 0
 fi
 
+
 # fetch newest updates
 # echo "git pull..." && git pull
 
