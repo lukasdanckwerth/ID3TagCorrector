@@ -44,19 +44,19 @@ switch command {
 case "correctGenre":
     
     let genre = nextArgument(onError: "No genre specified")
-    output = ID3Corrector.correctGenre(genre)
+    output = ID3Corrector.correctGenre(genre).trimmed
     
 case "correctName":
     
     let name = nextArgument(onError: "No name specified")
-    output = ID3Corrector.correctName(name)
+    output = ID3Corrector.correctName(name).trimmed
     
 case "remove":
     
     let filePath = nextArgument(onError: "No path to text file specified")
     let name = nextArgument(onError: "No name specified")
     
-    output = ID3Corrector.remove(wordsAt: filePath, in: name)
+    output = ID3Corrector.remove(wordsAt: filePath, in: name).trimmed
     
 case "--help", "-h":
     
