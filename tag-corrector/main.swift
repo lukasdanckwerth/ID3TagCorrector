@@ -49,7 +49,7 @@ case "correctGenre":
 case "correctName":
     
     let name = nextArgument(onError: "No name specified")
-    output = ID3Corrector.correctGenre(name)
+    output = ID3Corrector.correctName(name)
     
 case "remove":
     
@@ -67,6 +67,5 @@ default:
     exit("Unknown argument '\(command)'", withHelpMessage: true)
     
 }
-
 
 print(output ?? "", terminator: "")

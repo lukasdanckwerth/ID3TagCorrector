@@ -17,19 +17,16 @@ extension FileManager {
     static let mainDirectoryURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".tag-corrector", isDirectory: true)
     
     /// Reference to the file containing genre corrections.
-    static var genresFile = fileURL(for: "incorrect-genres")
+    static var incorrectGenresFileURL = fileURL(for: "incorrect-genres")
     
     /// Reference to the file containing incorrect `"feat."` notations.
-    static var featFile = fileURL(for: "incorrect-features")
+    static var incorrectFeaturesFileURL = fileURL(for: "incorrect-features")
     
     /// Reference to the file containing incorrect `"Prod. by"` notations.
-    static var prodByFile = fileURL(for: "incorrect-produced-by")
+    static var incorrectProducedByFileURL = fileURL(for: "incorrect-produced-by")
     
     /// Reference to the file containing replacements of words.
     static var replacementsFile = fileURL(for: "replacements")
-    
-    /// Reference to the file containing words to remove from names.
-    static var removementsFile = fileURL(for: "removements")
     
     
     // MARK: - Functions

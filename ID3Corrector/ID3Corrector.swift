@@ -25,16 +25,16 @@ struct ID3Corrector {
     // MARK: - Properties
     
     /// A dictionary of incorrect genres with their correction.
-    static var genres = keyValuePairs(at: FileManager.genresFile)
+    static var genres = dictionary(at: FileManager.incorrectGenresFileURL)
     
     /// A map containing key value pairs with words to replace.
-    static var replacements = keyValuePairs(at: FileManager.replacementsFile)
+    static var replacements = dictionary(at: FileManager.replacementsFile)
     
     /// A collection of incorrect `feat.` notations.
-    static var feats = lines(at: FileManager.featFile) + [feat]
+    static var feats = lines(at: FileManager.incorrectFeaturesFileURL) + [feat]
     
     /// A collection of incorrect `"Prod. by"` notations.
-    static var producedBy = lines(at: FileManager.prodByFile) + [prodBy]
+    static var producedBy = lines(at: FileManager.incorrectProducedByFileURL) + [prodBy]
     
     
     // MARK: - Correction Functionality
@@ -47,13 +47,14 @@ struct ID3Corrector {
     /// Returns the corrected version of the given name.
     static func correctName(_ name: String) -> String {
         
+        var name = name
         let comps = name.components(separatedBy: " - ")
         
         guard comps.count == 1 else {
             return comps.compactMap(correctName).joined(separator: " - ")
         }
         
-        var name = name.reaplacingBrackets
+        name = name.reaplacingBrackets
         name = replaceFeat(name: &name)
         name = replaceProducedBy(name: &name)
         name = name.replacing(replacements)
@@ -80,6 +81,7 @@ struct ID3Corrector {
     }
     
     private static func replaceProducedBy(name: inout String) -> String {
+        
         return name.replacing(words: producedBy.compactMap({ "(\($0)" }), with: "(\(prodBy)")
             ?? name.replacing(words: producedBy, with: "(\(prodBy)")?.appending(")")
             ?? name
@@ -98,8 +100,8 @@ struct ID3Corrector {
         return content(at: url)?.lines.cleaned ?? []
     }
     
-    /// Read key value file.
-    static func keyValuePairs(at url: URL) -> [String : String] {
+    /// Returns a dictionary containing key value pairs from the file at the given `URL`.  Keys and values are separated by an `"="` sign.
+    static func dictionary(at url: URL) -> [String : String] {
         
         var dictionary = [String : String]()
         
