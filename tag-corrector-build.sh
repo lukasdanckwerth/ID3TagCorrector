@@ -32,8 +32,8 @@ echo "clean xcode project"
 xcodebuild -quiet clean -project $A_PROJECT_NAME.xcodeproj -scheme tag-corrector
 
 echo "build xcode project"
-xcodebuild build -project $A_PROJECT_NAME.xcodeproj -scheme tag-corrector
+xcodebuild build -project $A_PROJECT_NAME.xcodeproj -scheme tag-corrector CONFIGURATION_BUILD_DIR=$A_REPOSITORY_PATH/target
 
-# archive CONFIGURATION_BUILD_DIR=$A_REPOSITORY_PATH/target
+# archive 
 
 echo "finished"
