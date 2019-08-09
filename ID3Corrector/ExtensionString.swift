@@ -46,6 +46,14 @@ extension String {
         return components(separatedBy: .newlines)
     }
     
+    /// Returns a new string made by removin wrong leading and trailing whitespaces from brackets.
+    var removingRedundantWhitespaces: String {
+        return replacing([
+            "( " : "(",
+            " )" : ")"
+            ])
+    }
+    
     
     // MARK: - Functions
     

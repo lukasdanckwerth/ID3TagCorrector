@@ -55,6 +55,7 @@ struct ID3Corrector {
         }
         
         name = name.reaplacingBrackets
+        name = name.removingRedundantWhitespaces
         name = replaceFeat(name: &name)
         name = replaceProducedBy(name: &name)
         name = name.replacing(replacements)
