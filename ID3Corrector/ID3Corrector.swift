@@ -64,8 +64,6 @@ struct ID3Corrector {
         
         // for now its to dangerous to correct names with both 'feat.' and 'Prod. by'
         if (name.contains(feat) && name.contains(prodBy)) && name.hasSuffix("))") {
-            print("name '\(name)'")
-            print("hasSuffix '\(name.hasSuffix("))"))'")
             return originalName
         }
         
