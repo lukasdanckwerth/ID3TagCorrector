@@ -18,6 +18,7 @@ if [ ! -d "$A_REPOSITORY_PATH/.git" ]; then
     echo "$A_REPOSITORY_PATH/.git doesn't exist"; exit 0
 fi
 
+
 # fetch newest updates
 # echo "git pull..." && git pull
 
@@ -31,8 +32,8 @@ echo "clean xcode project"
 xcodebuild -quiet clean -project $A_PROJECT_NAME.xcodeproj -scheme tag-corrector
 
 echo "build xcode project"
-xcodebuild build -project $A_PROJECT_NAME.xcodeproj -scheme tag-corrector
+xcodebuild build -project $A_PROJECT_NAME.xcodeproj -scheme tag-corrector CONFIGURATION_BUILD_DIR=$A_REPOSITORY_PATH/target
 
-# archive CONFIGURATION_BUILD_DIR=$A_REPOSITORY_PATH/target
+# archive 
 
 echo "finished"
