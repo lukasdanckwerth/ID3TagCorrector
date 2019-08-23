@@ -62,6 +62,10 @@ case "--help", "-h":
     
     exit(help)
     
+case "--version", "-v":
+    
+    exit("0.0.4")
+    
 default:
     
     exit("Unknown argument '\(command)'", withHelpMessage: true)

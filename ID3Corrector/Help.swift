@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 // MARK: - Help Text
 
 /// The string containing a help text for this tool.
@@ -23,6 +24,9 @@ COMMANDS:
 \("   ")\("--help".bold)                   Print this help text and exit
 
 """
+
+
+// MARK: - Exit Function
 
 /// Prints the given message and exits with the given exit code.
 func exit(_ message: String, exitCode: Int32 = EXIT_SUCCESS, withHelpMessage flag: Bool = false) -> Never {

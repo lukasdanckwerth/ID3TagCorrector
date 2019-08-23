@@ -60,6 +60,32 @@ class ID3CorrectorTests: XCTestCase {
         
         textCorrection("Lykke Li - deep end (alt version)",
                        "Lykke Li - deep end (Alternative Version)")
+        
+        textCorrection("KAY AY FT. IZZA - EINE WIE DU (Prod BY ISY BEATZ & C55)",
+                       "KAY AY (feat. IZZA) - EINE WIE DU (Prod. by ISY BEATZ & C55)")
+        
+        textCorrection("Lil Lano - Fische (Prod. By HNDRX)",
+                       "Lil Lano - Fische (Prod. by HNDRX)")
+        
+        textCorrection("Hanybal - CHECK (prod. von Jimmy Torrio)",
+                       "Hanybal - CHECK (Prod. by Jimmy Torrio)")
+        
+        textCorrection("Nekfeu - Ma dope ft. SPri Noir",
+                       "Nekfeu - Ma dope (feat. SPri Noir)")
+        
+//        textCorrection("ZUNA - CAZAL feat. MIAMI YACINE prod. by Lucry",
+//                       "ZUNA - CAZAL (feat. MIAMI YACINE) (Prod. by Lucry)")
+        
+        
+        // should stay the same
+        textCorrection("BHZ - SO LEBEN KANN (Prod. by MotB)",
+                       "BHZ - SO LEBEN KANN (Prod. by MotB)")
+        
+        
+        // check replacement of 'Prod. by by'
+        textCorrection("BHZ - SO LEBEN KANN (Prod. by by MotB)",
+                       "BHZ - SO LEBEN KANN (Prod. by MotB)")
+        
     }
     
     func textCorrection(_ name: String,_ expectation: String) {
@@ -68,9 +94,9 @@ class ID3CorrectorTests: XCTestCase {
         
         XCTAssert(corrected == expectation, """
             \n\n
+            Source     \(name)
             Corrected  \(corrected)
             Expected   \(expectation)
-            Source     \(name)
             \n
             """)
     }

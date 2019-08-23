@@ -47,6 +47,7 @@ struct ID3Corrector {
     /// Returns the corrected version of the given name.
     static func correctName(_ name: String) -> String {
         
+        let originalName = name
         var name = name
         let comps = name.components(separatedBy: " - ")
         
@@ -59,6 +60,14 @@ struct ID3Corrector {
         name = replaceFeat(name: &name)
         name = replaceProducedBy(name: &name)
         name = name.replacing(replacements)
+        
+        
+        // for now its to dangerous to correct names with both 'feat.' and 'Prod. by'
+        if (name.contains(feat) && name.contains(prodBy)) && name.hasSuffix("))") {
+            print("name '\(name)'")
+            print("hasSuffix '\(name.hasSuffix("))"))'")
+            return originalName
+        }
         
         return name
     }
@@ -76,12 +85,18 @@ struct ID3Corrector {
     
     private static func replaceFeat(name: inout String) -> String {
         
+        // skip for existing correct `"feat."` - notation
+        guard !name.contains(" (\(feat) ") else { return name }
+        
         return name.replacing(words: feats.compactMap({ "(\($0)" }), with: "(\(feat)")
             ?? name.replacing(words: feats, with: "(\(feat)")?.appending(")")
             ?? name
     }
     
     private static func replaceProducedBy(name: inout String) -> String {
+        
+        // skip for existing correct `"Prod. by"` - notation
+        guard !name.contains(" (\(prodBy) ") else { return name }
         
         return name.replacing(words: producedBy.compactMap({ "(\($0)" }), with: "(\(prodBy)")
             ?? name.replacing(words: producedBy, with: "(\(prodBy)")?.appending(")")
