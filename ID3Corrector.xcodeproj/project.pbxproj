@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8089CEF523C814BC00513935 /* tag-corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80D6CFAA22FCA411004454F6 /* tag-corrector */; };
 		80D6CFAD22FCA411004454F6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
 		80D6CFB222FCA4DE004454F6 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */; };
 		80D6CFB622FCAA94004454F6 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB522FCAA94004454F6 /* Help.swift */; };
@@ -18,6 +19,19 @@
 		80D6CFC822FCBB72004454F6 /* ID3Corrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806354521DB3C46000E4B78F /* ID3Corrector.swift */; };
 		80D6CFC922FCBB72004454F6 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB522FCAA94004454F6 /* Help.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8089CEF423C814B200513935 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = /Users/lukas/bin;
+			dstSubfolderSpec = 0;
+			files = (
+				8089CEF523C814BC00513935 /* tag-corrector in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		806354521DB3C46000E4B78F /* ID3Corrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector.swift; sourceTree = "<group>"; };
@@ -106,6 +120,7 @@
 				80D6CFA622FCA411004454F6 /* Sources */,
 				80D6CFA722FCA411004454F6 /* Frameworks */,
 				80D6CFB422FCA682004454F6 /* ShellScript */,
+				8089CEF423C814B200513935 /* CopyFiles */,
 			);
 			buildRules = (
 			);

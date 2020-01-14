@@ -2,3 +2,6 @@
 target
 build
 .formulapath
+
+## User settings
+xcuserdata/
