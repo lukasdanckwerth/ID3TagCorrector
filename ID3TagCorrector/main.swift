@@ -31,6 +31,9 @@ extension FileManager {
     /// Reference to the file containing incorrect `"Prod. by"` notations.
     static var incorrectProducedByFileURL = fileURL(for: "incorrect-produced-by")
     
+    /// Reference to the file containing removements of words.
+    static var removementsFile = fileURL(for: "removements")
+    
     /// Reference to the file containing replacements of words.
     static var replacementsFile = fileURL(for: "replacements")
     
@@ -98,6 +101,10 @@ extension String {
         ])
     }
     
+    /// Returns a new string made by replacing all double whitespaces `"  "` and with a single one `" "`.
+    var removingDoubleWhitespaces: String {
+        return replacingOccurrences(of: "  ", with: " ")
+    }
     
     // MARK: - Functions
     
@@ -159,16 +166,20 @@ usage: tag-corrector <command> [<args>]
 
 COMMANDS:
 
-\("   ")\("correctGenre".bold) <genre>     Corrects the passed genre
-\("   ")\("correctName".bold) <name>       Corrects the passed name
-\("   ")\("remove".bold) <file> <name>     Removes all words in the given file from the given name
+\("   ")\("correctGenre".bold)  <genre>     Corrects the passed genre
+\("   ")\("correctName".bold)  <name>       Corrects the passed name
+\("   ")\("remove".bold)  <file> <name>     Removes all words in the given file from the given name
 
 \("   ")\("--help".bold)                   Print this help text and exit
+\("   ")\("--version".bold)                Print the version of tag-corrector
 
 """
 
 
-// MARK: - Exit Function
+// ===-----------------------------------------------------------------------------------------------------------===
+//
+// MARK: - Exit Command Line Tool
+// ===-----------------------------------------------------------------------------------------------------------===
 
 /// Prints the given message and exits with the given exit code.
 func exit(_ message: String, exitCode: Int32 = EXIT_SUCCESS, withHelpMessage flag: Bool = false) -> Never {
@@ -249,12 +260,12 @@ struct ID3Corrector {
     }
     
     /// Removes all occurences of the words from the file at the given `URL` in the given name.
-    static func remove(wordsAt wordlistPath: String, in name: String) -> String {
-        let url = URL(fileURLWithPath: wordlistPath)
-        return lines(at: url).reduce(name, { name, word in
+    static func remove(wordsAt url: URL = FileManager.removementsFile, in name: String) -> String {
+        return lines(at: FileManager.removementsFile).reduce(name, { name, word in
             name.replacingOccurrences(of: word, with: "")
-        }).trimmed
+        }).trimmed.removingDoubleWhitespaces
     }
+    
     
     
     // MARK: - Replace
@@ -313,7 +324,10 @@ struct ID3Corrector {
 }
 
 
+// ===-----------------------------------------------------------------------------------------------------------===
+//
 // MARK: - Receive arguments
+// ===-----------------------------------------------------------------------------------------------------------===
 
 // receive command line arguments
 var arguments = CommandLine.arguments.dropFirst()
@@ -330,7 +344,10 @@ func nextArgument(onError message: String) -> String {
 }
 
 
+// ===-----------------------------------------------------------------------------------------------------------===
+//
 // MARK: - Preconditions
+// ===-----------------------------------------------------------------------------------------------------------===
 
 // receive command
 let command = nextArgument(onError: "No arguments given")
@@ -342,7 +359,10 @@ FileManager.default.createDirectoryIfNotExisting(FileManager.mainDirectoryURL)
 var output: String?
 
 
+// ===-----------------------------------------------------------------------------------------------------------===
+//
 // MARK: - Switch Command
+// ===-----------------------------------------------------------------------------------------------------------===
 
 switch command {
 case "correctGenre":
@@ -359,8 +379,9 @@ case "remove":
     
     let filePath = nextArgument(onError: "No path to text file specified")
     let name = nextArgument(onError: "No name specified")
+    let url = URL(fileURLWithPath: filePath)
     
-    output = ID3Corrector.remove(wordsAt: filePath, in: name).trimmed
+    output = ID3Corrector.remove(wordsAt: url, in: name).trimmed
     
 case "--help", "-h":
     
@@ -368,7 +389,7 @@ case "--help", "-h":
     
 case "--version", "-v":
     
-    exit("0.0.4")
+    exit("0.0.6")
     
 default:
     

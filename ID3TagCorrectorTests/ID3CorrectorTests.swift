@@ -73,8 +73,17 @@ class ID3CorrectorTests: XCTestCase {
         textCorrection("Nekfeu - Ma dope ft. SPri Noir",
                        "Nekfeu - Ma dope (feat. SPri Noir)")
         
-//        textCorrection("ZUNA - CAZAL feat. MIAMI YACINE prod. by Lucry",
-//                       "ZUNA - CAZAL (feat. MIAMI YACINE) (Prod. by Lucry)")
+        textCorrection("Respiration Ft. Scolla",
+                       "Respiration (feat. Scolla)")
+        
+        textCorrection("Good Grief (Ft. Diamante)",
+                       "Good Grief (feat. Diamante)")
+        
+        textCorrection("EARTHGANG - Trippin ft Kehlani",
+                       "EARTHGANG - Trippin (feat. Kehlani)")
+        
+        //        textCorrection("ZUNA - CAZAL feat. MIAMI YACINE prod. by Lucry",
+        //                       "ZUNA - CAZAL (feat. MIAMI YACINE) (Prod. by Lucry)")
         
         
         // should stay the same
@@ -89,13 +98,45 @@ class ID3CorrectorTests: XCTestCase {
     }
     
     func textCorrection(_ name: String,_ expectation: String) {
-        
         let corrected = ID3Corrector.correctName(name)
-        
+        assert(name, corrected, isEqual: expectation, after: "Correct Name")
+    }
+    
+    // ===-----------------------------------------------------------------------------------------------------------===
+    //
+    // MARK: - Remove
+    // ===-----------------------------------------------------------------------------------------------------------===
+    
+    func testRemovements() {
+        remove("Ferge X Fisherman – Backstage // JUICE PREMIERE",
+               "Ferge X Fisherman – Backstage")
+        remove("The Buttertones - \"Denial You Win Again\" (Official Video)",
+               "The Buttertones - \"Denial You Win Again\"")
+        remove("HAFTBEFEHL - 1999 Part.5 (prod. von Bazzazian) [Official Audio]",
+               "HAFTBEFEHL - 1999 Part.5 (prod. von Bazzazian)")
+        remove("Gabber Eleganza & HDMIRROR – Frozen Dopamina (Official Video) [LFEK008]",
+               "Gabber Eleganza & HDMIRROR – Frozen Dopamina [LFEK008]")
+        remove("Moses Sumney - Cut Me | A COLORS SHOW",
+               "Moses Sumney - Cut Me")
+    }
+    
+    func remove(_ name: String, _ expectation: String) {
+        let removed = ID3Corrector.remove(in: name)
+        assert(name, removed, isEqual: expectation, after: "Remove")
+    }
+    
+    // ===-----------------------------------------------------------------------------------------------------------===
+    //
+    // MARK: - Auxiliary
+    // ===-----------------------------------------------------------------------------------------------------------===
+    
+    func assert(_ name: String, _ corrected: String, isEqual expectation: String, after operation: String) {
         XCTAssert(corrected == expectation, """
             \n\n
+            Error during \(operation)
+            
             Source     \(name)
-            Corrected  \(corrected)
+            Removed    \(corrected)
             Expected   \(expectation)
             \n
             """)
