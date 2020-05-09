@@ -7,17 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8065FED12466A106003B3587 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
 		8089CEF523C814BC00513935 /* tag-corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80D6CFAA22FCA411004454F6 /* tag-corrector */; };
 		80D6CFAD22FCA411004454F6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
-		80D6CFB222FCA4DE004454F6 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */; };
-		80D6CFB622FCAA94004454F6 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB522FCAA94004454F6 /* Help.swift */; };
-		80D6CFB822FCABEE004454F6 /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB722FCABEE004454F6 /* ExtensionFileManager.swift */; };
-		80D6CFB922FCB041004454F6 /* ID3Corrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806354521DB3C46000E4B78F /* ID3Corrector.swift */; };
 		80D6CFC122FCBB26004454F6 /* ID3CorrectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */; };
-		80D6CFC622FCBB72004454F6 /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB722FCABEE004454F6 /* ExtensionFileManager.swift */; };
-		80D6CFC722FCBB72004454F6 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */; };
-		80D6CFC822FCBB72004454F6 /* ID3Corrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806354521DB3C46000E4B78F /* ID3Corrector.swift */; };
-		80D6CFC922FCBB72004454F6 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFB522FCAA94004454F6 /* Help.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,13 +27,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		806354521DB3C46000E4B78F /* ID3Corrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector.swift; sourceTree = "<group>"; };
 		80D6CFAA22FCA411004454F6 /* tag-corrector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "tag-corrector"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D6CFAC22FCA411004454F6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
-		80D6CFB522FCAA94004454F6 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
-		80D6CFB722FCABEE004454F6 /* ExtensionFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFileManager.swift; sourceTree = "<group>"; };
-		80D6CFBE22FCBB26004454F6 /* ID3CorrectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ID3CorrectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D6CFBE22FCBB26004454F6 /* ID3TagCorrectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ID3TagCorrectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3CorrectorTests.swift; sourceTree = "<group>"; };
 		80D6CFC222FCBB26004454F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,23 +52,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		802D91FC22FA474F007FC465 /* ID3Corrector */ = {
-			isa = PBXGroup;
-			children = (
-				80D6CFB722FCABEE004454F6 /* ExtensionFileManager.swift */,
-				80D6CFB122FCA4DE004454F6 /* ExtensionString.swift */,
-				806354521DB3C46000E4B78F /* ID3Corrector.swift */,
-				80D6CFB522FCAA94004454F6 /* Help.swift */,
-			);
-			path = ID3Corrector;
-			sourceTree = "<group>";
-		};
 		806354461DB3C45F00E4B78F = {
 			isa = PBXGroup;
 			children = (
-				802D91FC22FA474F007FC465 /* ID3Corrector */,
-				80D6CFAB22FCA411004454F6 /* tag-corrector */,
-				80D6CFBF22FCBB26004454F6 /* ID3CorrectorTests */,
+				80D6CFAB22FCA411004454F6 /* ID3TagCorrector */,
+				80D6CFBF22FCBB26004454F6 /* ID3TagCorrectorTests */,
 				806354501DB3C46000E4B78F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,26 +65,26 @@
 			isa = PBXGroup;
 			children = (
 				80D6CFAA22FCA411004454F6 /* tag-corrector */,
-				80D6CFBE22FCBB26004454F6 /* ID3CorrectorTests.xctest */,
+				80D6CFBE22FCBB26004454F6 /* ID3TagCorrectorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80D6CFAB22FCA411004454F6 /* tag-corrector */ = {
+		80D6CFAB22FCA411004454F6 /* ID3TagCorrector */ = {
 			isa = PBXGroup;
 			children = (
 				80D6CFAC22FCA411004454F6 /* main.swift */,
 			);
-			path = "tag-corrector";
+			path = ID3TagCorrector;
 			sourceTree = "<group>";
 		};
-		80D6CFBF22FCBB26004454F6 /* ID3CorrectorTests */ = {
+		80D6CFBF22FCBB26004454F6 /* ID3TagCorrectorTests */ = {
 			isa = PBXGroup;
 			children = (
 				80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */,
 				80D6CFC222FCBB26004454F6 /* Info.plist */,
 			);
-			path = ID3CorrectorTests;
+			path = ID3TagCorrectorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,9 +108,9 @@
 			productReference = 80D6CFAA22FCA411004454F6 /* tag-corrector */;
 			productType = "com.apple.product-type.tool";
 		};
-		80D6CFBD22FCBB26004454F6 /* ID3CorrectorTests */ = {
+		80D6CFBD22FCBB26004454F6 /* ID3TagCorrectorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "ID3CorrectorTests" */;
+			buildConfigurationList = 80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "ID3TagCorrectorTests" */;
 			buildPhases = (
 				80D6CFBA22FCBB26004454F6 /* Sources */,
 				80D6CFBB22FCBB26004454F6 /* Frameworks */,
@@ -143,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = ID3CorrectorTests;
+			name = ID3TagCorrectorTests;
 			productName = ID3CorrectorTests;
-			productReference = 80D6CFBE22FCBB26004454F6 /* ID3CorrectorTests.xctest */;
+			productReference = 80D6CFBE22FCBB26004454F6 /* ID3TagCorrectorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +132,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Lukas Danckwerth";
 				TargetAttributes = {
 					80D6CFA922FCA411004454F6 = {
@@ -165,11 +142,12 @@
 					80D6CFBD22FCBB26004454F6 = {
 						CreatedOnToolsVersion = 10.3;
 						DevelopmentTeam = 9355YBP8MQ;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 8063544A1DB3C45F00E4B78F /* Build configuration list for PBXProject "ID3Corrector" */;
+			buildConfigurationList = 8063544A1DB3C45F00E4B78F /* Build configuration list for PBXProject "ID3TagCorrector" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,7 +161,7 @@
 			projectRoot = "";
 			targets = (
 				80D6CFA922FCA411004454F6 /* tag-corrector */,
-				80D6CFBD22FCBB26004454F6 /* ID3CorrectorTests */,
+				80D6CFBD22FCBB26004454F6 /* ID3TagCorrectorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,11 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80D6CFB922FCB041004454F6 /* ID3Corrector.swift in Sources */,
-				80D6CFB222FCA4DE004454F6 /* ExtensionString.swift in Sources */,
-				80D6CFB822FCABEE004454F6 /* ExtensionFileManager.swift in Sources */,
 				80D6CFAD22FCA411004454F6 /* main.swift in Sources */,
-				80D6CFB622FCAA94004454F6 /* Help.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,10 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80D6CFC622FCBB72004454F6 /* ExtensionFileManager.swift in Sources */,
-				80D6CFC722FCBB72004454F6 /* ExtensionString.swift in Sources */,
-				80D6CFC822FCBB72004454F6 /* ID3Corrector.swift in Sources */,
-				80D6CFC922FCBB72004454F6 /* Help.swift in Sources */,
+				8065FED12466A106003B3587 /* main.swift in Sources */,
 				80D6CFC122FCBB26004454F6 /* ID3CorrectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +333,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
@@ -380,6 +352,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
@@ -401,7 +374,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9355YBP8MQ;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = ID3CorrectorTests/Info.plist;
+				INFOPLIST_FILE = ID3TagCorrectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -409,7 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.aid.ID3CorrectorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -425,20 +398,20 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9355YBP8MQ;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = ID3CorrectorTests/Info.plist;
+				INFOPLIST_FILE = ID3TagCorrectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = de.aid.ID3CorrectorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8063544A1DB3C45F00E4B78F /* Build configuration list for PBXProject "ID3Corrector" */ = {
+		8063544A1DB3C45F00E4B78F /* Build configuration list for PBXProject "ID3TagCorrector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				806354541DB3C46000E4B78F /* Debug */,
@@ -456,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "ID3CorrectorTests" */ = {
+		80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "ID3TagCorrectorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80D6CFC422FCBB26004454F6 /* Debug */,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1030"
+   LastUpgradeVersion = "1130"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,7 +17,7 @@
                BlueprintIdentifier = "80D6CFA922FCA411004454F6"
                BuildableName = "tag-corrector"
                BlueprintName = "tag-corrector"
-               ReferencedContainer = "container:ID3Corrector.xcodeproj">
+               ReferencedContainer = "container:ID3TagCorrector.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,19 +27,17 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80D6CFA922FCA411004454F6"
             BuildableName = "tag-corrector"
             BlueprintName = "tag-corrector"
-            ReferencedContainer = "container:ID3Corrector.xcodeproj">
+            ReferencedContainer = "container:ID3TagCorrector.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -58,21 +56,9 @@
             BlueprintIdentifier = "80D6CFA922FCA411004454F6"
             BuildableName = "tag-corrector"
             BlueprintName = "tag-corrector"
-            ReferencedContainer = "container:ID3Corrector.xcodeproj">
+            ReferencedContainer = "container:ID3TagCorrector.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "--correctGenre"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "hip-hop"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -87,7 +73,7 @@
             BlueprintIdentifier = "80D6CFA922FCA411004454F6"
             BuildableName = "tag-corrector"
             BlueprintName = "tag-corrector"
-            ReferencedContainer = "container:ID3Corrector.xcodeproj">
+            ReferencedContainer = "container:ID3TagCorrector.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
