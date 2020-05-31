@@ -10,12 +10,21 @@ import XCTest
 
 class ID3CorrectorTests: XCTestCase {
     
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    let removementsFileURL = Bundle(for: ID3CorrectorTests.self).url(forResource: "removements", withExtension: "txt")!
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    let replacementsFileURL = Bundle(for: ID3CorrectorTests.self).url(forResource: "replacements", withExtension: "txt")!
+    
+    let incorrectGenresFileURL = Bundle(for: ID3CorrectorTests.self).url(forResource: "incorrect-genres", withExtension: "txt")!
+    
+    let incorrectFeaturesFileURL = Bundle(for: ID3CorrectorTests.self).url(forResource: "incorrect-features", withExtension: "txt")!
+    
+    let incorrectProducedByFileURL = Bundle(for: ID3CorrectorTests.self).url(forResource: "incorrect-produced-by", withExtension: "txt")!
+    
+    override func setUp() {
+        ID3Corrector.replacements = ID3Corrector.dictionary(at: replacementsFileURL)
+        ID3Corrector.genres = ID3Corrector.dictionary(at: incorrectGenresFileURL)
+        ID3Corrector.feats = ID3Corrector.lines(at: incorrectFeaturesFileURL)
+        ID3Corrector.producedBy = ID3Corrector.lines(at: incorrectProducedByFileURL)
     }
     
     func testGenreCorrection() {
@@ -121,7 +130,7 @@ class ID3CorrectorTests: XCTestCase {
     }
     
     func remove(_ name: String, _ expectation: String) {
-        let removed = ID3Corrector.remove(in: name)
+        let removed = ID3Corrector.remove(wordsAt: removementsFileURL, in: name)
         assert(name, removed, isEqual: expectation, after: "Remove")
     }
     

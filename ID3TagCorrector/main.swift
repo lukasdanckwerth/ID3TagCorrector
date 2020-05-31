@@ -261,7 +261,7 @@ struct ID3Corrector {
     
     /// Removes all occurences of the words from the file at the given `URL` in the given name.
     static func remove(wordsAt url: URL = FileManager.removementsFile, in name: String) -> String {
-        return lines(at: FileManager.removementsFile).reduce(name, { name, word in
+        return lines(at: url).reduce(name, { name, word in
             name.replacingOccurrences(of: word, with: "")
         }).trimmed.removingDoubleWhitespaces
     }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80286BFE248449EE00BDF13C /* replacements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80286BF9248449EE00BDF13C /* replacements.txt */; };
+		80286BFF248449EE00BDF13C /* incorrect-features.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80286BFA248449EE00BDF13C /* incorrect-features.txt */; };
+		80286C00248449EE00BDF13C /* incorrect-genres.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80286BFB248449EE00BDF13C /* incorrect-genres.txt */; };
+		80286C01248449EE00BDF13C /* incorrect-produced-by.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80286BFC248449EE00BDF13C /* incorrect-produced-by.txt */; };
+		80286C02248449EE00BDF13C /* removements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80286BFD248449EE00BDF13C /* removements.txt */; };
 		8065FED12466A106003B3587 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
 		8089CEF523C814BC00513935 /* tag-corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80D6CFAA22FCA411004454F6 /* tag-corrector */; };
 		80D6CFAD22FCA411004454F6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
@@ -27,6 +32,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		80286BF9248449EE00BDF13C /* replacements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = replacements.txt; sourceTree = "<group>"; };
+		80286BFA248449EE00BDF13C /* incorrect-features.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "incorrect-features.txt"; sourceTree = "<group>"; };
+		80286BFB248449EE00BDF13C /* incorrect-genres.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "incorrect-genres.txt"; sourceTree = "<group>"; };
+		80286BFC248449EE00BDF13C /* incorrect-produced-by.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "incorrect-produced-by.txt"; sourceTree = "<group>"; };
+		80286BFD248449EE00BDF13C /* removements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = removements.txt; sourceTree = "<group>"; };
 		80D6CFAA22FCA411004454F6 /* tag-corrector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "tag-corrector"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D6CFAC22FCA411004454F6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		80D6CFBE22FCBB26004454F6 /* ID3TagCorrectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ID3TagCorrectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +62,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80286BF8248449D500BDF13C /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				80286BFA248449EE00BDF13C /* incorrect-features.txt */,
+				80286BFB248449EE00BDF13C /* incorrect-genres.txt */,
+				80286BFC248449EE00BDF13C /* incorrect-produced-by.txt */,
+				80286BFD248449EE00BDF13C /* removements.txt */,
+				80286BF9248449EE00BDF13C /* replacements.txt */,
+			);
+			path = "Test Data";
+			sourceTree = "<group>";
+		};
 		806354461DB3C45F00E4B78F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,7 @@
 		80D6CFBF22FCBB26004454F6 /* ID3TagCorrectorTests */ = {
 			isa = PBXGroup;
 			children = (
+				80286BF8248449D500BDF13C /* Test Data */,
 				80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */,
 				80D6CFC222FCBB26004454F6 /* Info.plist */,
 			);
@@ -171,6 +194,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80286C02248449EE00BDF13C /* removements.txt in Resources */,
+				80286BFE248449EE00BDF13C /* replacements.txt in Resources */,
+				80286BFF248449EE00BDF13C /* incorrect-features.txt in Resources */,
+				80286C00248449EE00BDF13C /* incorrect-genres.txt in Resources */,
+				80286C01248449EE00BDF13C /* incorrect-produced-by.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
