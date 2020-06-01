@@ -13,23 +13,9 @@
 		80286C01248449EE00BDF13C /* incorrect-produced-by.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80286BFC248449EE00BDF13C /* incorrect-produced-by.txt */; };
 		80286C02248449EE00BDF13C /* removements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80286BFD248449EE00BDF13C /* removements.txt */; };
 		8065FED12466A106003B3587 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
-		8089CEF523C814BC00513935 /* tag-corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80D6CFAA22FCA411004454F6 /* tag-corrector */; };
 		80D6CFAD22FCA411004454F6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
 		80D6CFC122FCBB26004454F6 /* ID3CorrectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8089CEF423C814B200513935 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = /Users/lukas/bin;
-			dstSubfolderSpec = 0;
-			files = (
-				8089CEF523C814BC00513935 /* tag-corrector in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		80286BF9248449EE00BDF13C /* replacements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = replacements.txt; sourceTree = "<group>"; };
@@ -119,8 +105,6 @@
 			buildPhases = (
 				80D6CFA622FCA411004454F6 /* Sources */,
 				80D6CFA722FCA411004454F6 /* Frameworks */,
-				80D6CFB422FCA682004454F6 /* ShellScript */,
-				8089CEF423C814B200513935 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -160,6 +144,7 @@
 				TargetAttributes = {
 					80D6CFA922FCA411004454F6 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1150;
 						ProvisioningStyle = Manual;
 					};
 					80D6CFBD22FCBB26004454F6 = {
@@ -202,26 +187,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		80D6CFB422FCA682004454F6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\n# cp $TARGET_BUILD_DIR/tag-corrector\n# cp -R $TARGET_BUILD_DIR/tag_corrector.swiftmodule $PROJECT_DIR/bin\n\n# chmod +x $TARGET_BUILD_DIR/tag-corrector\n\n# rm -rf \"/Users/lukas/bin/tag-corrector\"\n# ln -s $PROJECT_DIR/bin/tag-corrector /Users/lukas/bin/tag-corrector\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		80D6CFA622FCA411004454F6 /* Sources */ = {
@@ -360,12 +325,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -378,10 +342,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -396,7 +359,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ID3TagCorrectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = de.aid.ID3CorrectorTests;
@@ -417,7 +379,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ID3TagCorrectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = de.aid.ID3CorrectorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
