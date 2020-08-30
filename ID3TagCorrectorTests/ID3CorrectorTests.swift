@@ -82,9 +82,11 @@ class ID3CorrectorTests: XCTestCase {
         textCorrection("EARTHGANG - Trippin ft Kehlani",
                        "EARTHGANG - Trippin (feat. Kehlani)")
         
-        //        textCorrection("ZUNA - CAZAL feat. MIAMI YACINE prod. by Lucry",
-        //                       "ZUNA - CAZAL (feat. MIAMI YACINE) (Prod. by Lucry)")
+        textCorrection("ZUNA - CAZAL feat. MIAMI YACINE prod. by Lucry",
+                       "ZUNA - CAZAL (feat. MIAMI YACINE) (Prod. by Lucry)")
         
+        textCorrection("Nix ft. Frauenarzt (prod. Lex Lugner)",
+                       "Nix (feat. Frauenarzt) (Prod. by Lex Lugner)")
         
         // should stay the same
         textCorrection("BHZ - SO LEBEN KANN (Prod. by MotB)",
@@ -94,6 +96,9 @@ class ID3CorrectorTests: XCTestCase {
         // check replacement of 'Prod. by by'
         textCorrection("BHZ - SO LEBEN KANN (Prod. by by MotB)",
                        "BHZ - SO LEBEN KANN (Prod. by MotB)")
+        
+        textCorrection("Joey Bada$$ - No Explanation (Feat. Pusha T)",
+                       "Joey Bada$$ - No Explanation (feat. Pusha T)")
         
     }
     
