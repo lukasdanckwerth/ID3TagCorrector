@@ -27,6 +27,7 @@ class ID3CorrectorTests: XCTestCase {
         ID3Corrector.genres = ID3Corrector.dictionary(at: incorrectGenresFileURL)
         ID3Corrector.feats = ID3Corrector.lines(at: incorrectFeaturesFileURL)
         ID3Corrector.producedBy = ID3Corrector.lines(at: incorrectProducedByFileURL)
+        FileManager.removementsFile = removementsFileURL
     }
     
     func testGenreCorrection() {
