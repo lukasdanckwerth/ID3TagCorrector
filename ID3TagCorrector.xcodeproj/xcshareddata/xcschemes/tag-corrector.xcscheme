@@ -42,8 +42,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "80D6CFBD22FCBB26004454F6"
-               BuildableName = "ID3TagCorrectorTests.xctest"
-               BlueprintName = "ID3TagCorrectorTests"
+               BuildableName = "tag-corrector tests.xctest"
+               BlueprintName = "tag-corrector tests"
                ReferencedContainer = "container:ID3TagCorrector.xcodeproj">
             </BuildableReference>
          </TestableReference>

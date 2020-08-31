@@ -31,6 +31,7 @@ struct TrackTitle {
         return onlyTitle
             .replacing(ID3Corrector.replacements)
             .removingRedundantWhitespaces
+            .trimmed
     }
     
     var featSignal: String? {

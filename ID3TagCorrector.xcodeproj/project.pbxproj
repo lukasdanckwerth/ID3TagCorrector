@@ -50,7 +50,7 @@
 		8027523F24FC163200BC30B5 /* replacements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = replacements.txt; sourceTree = "<group>"; };
 		80D6CFAA22FCA411004454F6 /* tag-corrector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "tag-corrector"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D6CFAC22FCA411004454F6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		80D6CFBE22FCBB26004454F6 /* ID3TagCorrectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ID3TagCorrectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D6CFBE22FCBB26004454F6 /* tag-corrector tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tag-corrector tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3CorrectorTests.swift; sourceTree = "<group>"; };
 		80D6CFC222FCBB26004454F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				80D6CFAA22FCA411004454F6 /* tag-corrector */,
-				80D6CFBE22FCBB26004454F6 /* ID3TagCorrectorTests.xctest */,
+				80D6CFBE22FCBB26004454F6 /* tag-corrector tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,18 +125,18 @@
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
-		8035C23524CF7A47003550B2 /* ID3TagCorrectorDeploy */ = {
+		80711FCF24FD6AED00FEF9DC /* tag-corrector deployment */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 8035C23824CF7A47003550B2 /* Build configuration list for PBXLegacyTarget "ID3TagCorrectorDeploy" */;
+			buildConfigurationList = 80711FD024FD6AED00FEF9DC /* Build configuration list for PBXLegacyTarget "tag-corrector deployment" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
 			dependencies = (
 			);
-			name = ID3TagCorrectorDeploy;
+			name = "tag-corrector deployment";
 			passBuildSettingsInEnvironment = 1;
-			productName = ID3TagCorrectorDeploy;
+			productName = "tag-corrector deployment";
 		};
 /* End PBXLegacyTarget section */
 
@@ -159,9 +159,9 @@
 			productReference = 80D6CFAA22FCA411004454F6 /* tag-corrector */;
 			productType = "com.apple.product-type.tool";
 		};
-		80D6CFBD22FCBB26004454F6 /* ID3TagCorrectorTests */ = {
+		80D6CFBD22FCBB26004454F6 /* tag-corrector tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "ID3TagCorrectorTests" */;
+			buildConfigurationList = 80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "tag-corrector tests" */;
 			buildPhases = (
 				80D6CFBA22FCBB26004454F6 /* Sources */,
 				80D6CFBB22FCBB26004454F6 /* Frameworks */,
@@ -172,9 +172,9 @@
 			dependencies = (
 				8027524624FC168100BC30B5 /* PBXTargetDependency */,
 			);
-			name = ID3TagCorrectorTests;
+			name = "tag-corrector tests";
 			productName = ID3CorrectorTests;
-			productReference = 80D6CFBE22FCBB26004454F6 /* ID3TagCorrectorTests.xctest */;
+			productReference = 80D6CFBE22FCBB26004454F6 /* tag-corrector tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -187,21 +187,19 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Lukas Danckwerth";
 				TargetAttributes = {
-					8035C23524CF7A47003550B2 = {
+					80711FCF24FD6AED00FEF9DC = {
 						CreatedOnToolsVersion = 11.6;
-						DevelopmentTeam = KJ8F2457JT;
 						ProvisioningStyle = Automatic;
 					};
 					80D6CFA922FCA411004454F6 = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1150;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					80D6CFBD22FCBB26004454F6 = {
 						CreatedOnToolsVersion = 10.3;
-						DevelopmentTeam = 9355YBP8MQ;
 						LastSwiftMigration = 1130;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -219,8 +217,8 @@
 			projectRoot = "";
 			targets = (
 				80D6CFA922FCA411004454F6 /* tag-corrector */,
-				80D6CFBD22FCBB26004454F6 /* ID3TagCorrectorTests */,
-				8035C23524CF7A47003550B2 /* ID3TagCorrectorDeploy */,
+				80D6CFBD22FCBB26004454F6 /* tag-corrector tests */,
+				80711FCF24FD6AED00FEF9DC /* tag-corrector deployment */,
 			);
 		};
 /* End PBXProject section */
@@ -289,46 +287,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		8035C23624CF7A47003550B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = KJ8F2457JT;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		8035C23724CF7A47003550B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KJ8F2457JT;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				MTL_FAST_MATH = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		806354541DB3C46000E4B78F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -438,6 +396,44 @@
 			};
 			name = Release;
 		};
+		80711FD124FD6AED00FEF9DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		80711FD224FD6AED00FEF9DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		80D6CFAF22FCA411004454F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -446,12 +442,14 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 			};
@@ -465,11 +463,13 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -481,10 +481,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9355YBP8MQ;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ID3TagCorrectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -493,6 +493,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = de.aid.ID3CorrectorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 			};
@@ -505,10 +506,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9355YBP8MQ;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ID3TagCorrectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -516,6 +517,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = de.aid.ID3CorrectorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -523,20 +525,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8035C23824CF7A47003550B2 /* Build configuration list for PBXLegacyTarget "ID3TagCorrectorDeploy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8035C23624CF7A47003550B2 /* Debug */,
-				8035C23724CF7A47003550B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8063544A1DB3C45F00E4B78F /* Build configuration list for PBXProject "ID3TagCorrector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				806354541DB3C46000E4B78F /* Debug */,
 				806354551DB3C46000E4B78F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80711FD024FD6AED00FEF9DC /* Build configuration list for PBXLegacyTarget "tag-corrector deployment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80711FD124FD6AED00FEF9DC /* Debug */,
+				80711FD224FD6AED00FEF9DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -550,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "ID3TagCorrectorTests" */ = {
+		80D6CFC322FCBB26004454F6 /* Build configuration list for PBXNativeTarget "tag-corrector tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80D6CFC422FCBB26004454F6 /* Debug */,

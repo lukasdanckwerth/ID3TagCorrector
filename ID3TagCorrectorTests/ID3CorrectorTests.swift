@@ -123,6 +123,9 @@ class ID3CorrectorTests: XCTestCase {
         textCorrection("Joey Bada$$ - No Explanation (Feat. Pusha T)",
                        "Joey Bada$$ - No Explanation (feat. Pusha T)")
         
+        // remove double whitespaces
+        textCorrection("Juicy Gay & Haiyti - Das hat Nichts zu Bedeuten  (Prod. by Asadjohn)",
+                       "Juicy Gay & Haiyti - Das hat Nichts zu Bedeuten (Prod. by Asadjohn)")
     }
     
     func textCorrection(_ name: String,_ expectation: String) {
