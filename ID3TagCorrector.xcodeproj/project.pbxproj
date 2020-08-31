@@ -254,7 +254,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# cp $TARGET_BUILD_DIR/tag-corrector\n# cp -R $TARGET_BUILD_DIR/tag_corrector.swiftmodule $PROJECT_DIR/bin\n\n# \n\nSOURCE_PATH=\"$PROJECT_DIR/$PROJECT_NAME/main.swift\"\necho $SOURCE_PATH\n\nTARGET_PATH=\"$HOME/Library/Music/Scripts/tag-corrector\"\necho $TARGET_PATH\n\nrm -rf \"$TARGET_PATH\"\ncp \"$SOURCE_PATH\" \"$TARGET_PATH\"\nchmod +x \"$TARGET_PATH\"\n";
+			shellScript = "SOURCE_PATH=\"$PROJECT_DIR/$PROJECT_NAME/main.swift\"\necho $SOURCE_PATH\n\nTARGET_DIR_PATH=\"$HOME/Library/Music/Scripts\"\necho $TARGET_DIR_PATH\n\nif [ ! -d \"$TARGET_DIR_PATH\" ] ; then\n  exit 0\nfi\n\nTARGET_PATH=\"$TARGET_DIR_PATH/tag-corrector\"\necho $TARGET_PATH\n\nrm -rf \"$TARGET_PATH\"\ncp \"$SOURCE_PATH\" \"$TARGET_PATH\"\nchmod +x \"$TARGET_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
