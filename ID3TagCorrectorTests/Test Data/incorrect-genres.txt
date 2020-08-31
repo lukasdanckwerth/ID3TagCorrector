@@ -1,0 +1,7 @@
+hip hop  = Hip Hop
+hip-hop  = Hip Hop
+Hip-Hop  = Hip Hop
+Rap      = Hip Hop
+Hip hop  = Hip Hop
+
+Rap / Hip Hop = Hip Hop

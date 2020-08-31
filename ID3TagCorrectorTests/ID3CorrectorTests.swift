@@ -10,12 +10,23 @@ import XCTest
 
 class ID3CorrectorTests: XCTestCase {
     
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    lazy var bundle = Bundle(for: ID3CorrectorTests.self)
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    lazy var removementsFileURL = bundle.url(forResource: "removements", withExtension: "txt")!
+    
+    lazy var replacementsFileURL = bundle.url(forResource: "replacements", withExtension: "txt")!
+    
+    lazy var incorrectGenresFileURL = bundle.url(forResource: "incorrect-genres", withExtension: "txt")!
+    
+    lazy var incorrectFeaturesFileURL = bundle.url(forResource: "incorrect-features", withExtension: "txt")!
+    
+    lazy var incorrectProducedByFileURL = bundle.url(forResource: "incorrect-produced-by", withExtension: "txt")!
+    
+    override func setUp() {
+        ID3Corrector.replacements = ID3Corrector.dictionary(at: replacementsFileURL)
+        ID3Corrector.genres = ID3Corrector.dictionary(at: incorrectGenresFileURL)
+        ID3Corrector.feats = ID3Corrector.lines(at: incorrectFeaturesFileURL)
+        ID3Corrector.producedBy = ID3Corrector.lines(at: incorrectProducedByFileURL)
     }
     
     func testGenreCorrection() {
@@ -88,6 +99,18 @@ class ID3CorrectorTests: XCTestCase {
         textCorrection("Nix ft. Frauenarzt (prod. Lex Lugner)",
                        "Nix (feat. Frauenarzt) (Prod. by Lex Lugner)")
         
+        textCorrection("Harakiri Pt. 5 ft. Bimbo Beutlin (prod. Asadjohn)",
+                       "Harakiri Pt. 5 (feat. Bimbo Beutlin) (Prod. by Asadjohn)")
+        
+        textCorrection("Stevie Stone - Type of Time feat. Spaide R.I.P.P.E.R. | Official Music Video",
+                       "Stevie Stone - Type of Time (feat. Spaide R.I.P.P.E.R.)")
+        
+        textCorrection("MUFASA - AN ALLE BULGIS (Prod by Semibeatz)",
+                       "MUFASA - AN ALLE BULGIS (Prod. by Semibeatz)")
+        
+        textCorrection("KING KHALIL - PARA MONEY CASH (Prod By ISY BEATZ & C55)",
+                       "KING KHALIL - PARA MONEY CASH (Prod. by ISY BEATZ & C55)")
+        
         // should stay the same
         textCorrection("BHZ - SO LEBEN KANN (Prod. by MotB)",
                        "BHZ - SO LEBEN KANN (Prod. by MotB)")
@@ -126,7 +149,7 @@ class ID3CorrectorTests: XCTestCase {
     }
     
     func remove(_ name: String, _ expectation: String) {
-        let removed = ID3Corrector.remove(in: name)
+        let removed = ID3Corrector.remove(wordsAt: removementsFileURL, in: name)
         assert(name, removed, isEqual: expectation, after: "Remove")
     }
     

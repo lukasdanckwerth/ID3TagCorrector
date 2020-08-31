@@ -7,11 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8027524024FC163200BC30B5 /* incorrect-features.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8027523B24FC163200BC30B5 /* incorrect-features.txt */; };
+		8027524124FC163200BC30B5 /* incorrect-genres.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8027523C24FC163200BC30B5 /* incorrect-genres.txt */; };
+		8027524224FC163200BC30B5 /* incorrect-produced-by.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8027523D24FC163200BC30B5 /* incorrect-produced-by.txt */; };
+		8027524324FC163200BC30B5 /* removements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8027523E24FC163200BC30B5 /* removements.txt */; };
+		8027524424FC163200BC30B5 /* replacements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8027523F24FC163200BC30B5 /* replacements.txt */; };
 		8065FED12466A106003B3587 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
 		8089CEF523C814BC00513935 /* tag-corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80D6CFAA22FCA411004454F6 /* tag-corrector */; };
 		80D6CFAD22FCA411004454F6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
 		80D6CFC122FCBB26004454F6 /* ID3CorrectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8027524524FC168100BC30B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 806354471DB3C45F00E4B78F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80D6CFA922FCA411004454F6;
+			remoteInfo = "tag-corrector";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		8089CEF423C814B200513935 /* CopyFiles */ = {
@@ -27,6 +42,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8027523B24FC163200BC30B5 /* incorrect-features.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "incorrect-features.txt"; sourceTree = "<group>"; };
+		8027523C24FC163200BC30B5 /* incorrect-genres.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "incorrect-genres.txt"; sourceTree = "<group>"; };
+		8027523D24FC163200BC30B5 /* incorrect-produced-by.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "incorrect-produced-by.txt"; sourceTree = "<group>"; };
+		8027523E24FC163200BC30B5 /* removements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = removements.txt; sourceTree = "<group>"; };
+		8027523F24FC163200BC30B5 /* replacements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = replacements.txt; sourceTree = "<group>"; };
 		80D6CFAA22FCA411004454F6 /* tag-corrector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "tag-corrector"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D6CFAC22FCA411004454F6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		80D6CFBE22FCBB26004454F6 /* ID3TagCorrectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ID3TagCorrectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +72,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8027523A24FC163200BC30B5 /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				8027523B24FC163200BC30B5 /* incorrect-features.txt */,
+				8027523C24FC163200BC30B5 /* incorrect-genres.txt */,
+				8027523D24FC163200BC30B5 /* incorrect-produced-by.txt */,
+				8027523E24FC163200BC30B5 /* removements.txt */,
+				8027523F24FC163200BC30B5 /* replacements.txt */,
+			);
+			path = "Test Data";
+			sourceTree = "<group>";
+		};
 		806354461DB3C45F00E4B78F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +113,7 @@
 		80D6CFBF22FCBB26004454F6 /* ID3TagCorrectorTests */ = {
 			isa = PBXGroup;
 			children = (
+				8027523A24FC163200BC30B5 /* Test Data */,
 				80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */,
 				80D6CFC222FCBB26004454F6 /* Info.plist */,
 			);
@@ -135,6 +168,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8027524624FC168100BC30B5 /* PBXTargetDependency */,
 			);
 			name = ID3TagCorrectorTests;
 			productName = ID3CorrectorTests;
@@ -194,6 +228,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8027524224FC163200BC30B5 /* incorrect-produced-by.txt in Resources */,
+				8027524124FC163200BC30B5 /* incorrect-genres.txt in Resources */,
+				8027524324FC163200BC30B5 /* removements.txt in Resources */,
+				8027524024FC163200BC30B5 /* incorrect-features.txt in Resources */,
+				8027524424FC163200BC30B5 /* replacements.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +277,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8027524624FC168100BC30B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80D6CFA922FCA411004454F6 /* tag-corrector */;
+			targetProxy = 8027524524FC168100BC30B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8035C23624CF7A47003550B2 /* Debug */ = {

@@ -12,6 +12,77 @@ import Foundation
 
 // ===-----------------------------------------------------------------------------------------------------------===
 //
+// MARK: - `TrackTitle`
+// ===-----------------------------------------------------------------------------------------------------------===
+
+struct TrackTitle {
+    var raw: String
+    
+    var title: String {
+        let onlyTitle: String
+        if let candidate = raw.component(before: ID3Corrector.feats) {
+            onlyTitle = candidate.component(before: ID3Corrector.producedBy) ?? candidate
+        } else if let candidate = raw.component(before: ID3Corrector.producedBy) {
+            onlyTitle = candidate.component(before: ID3Corrector.feats) ?? candidate
+        } else {
+            onlyTitle = raw
+        }
+        
+        return onlyTitle
+            .replacing(ID3Corrector.replacements)
+            .removingRedundantWhitespaces
+    }
+    
+    var featSignal: String? {
+        raw.find(oneOf: ID3Corrector.feats)
+    }
+    
+    var prodSignal: String? {
+        raw.find(oneOf: ID3Corrector.producedBy)
+    }
+    
+    var featuring: String? {
+        guard let candidate = raw.component(after: ID3Corrector.feats) else { return nil }
+        var featuringString = candidate.component(before: ID3Corrector.producedBy) ?? candidate
+        featuringString = featuringString.removingRedundantWhitespaces
+        featuringString = featuringString.replacing(ID3Corrector.replacements)
+        featuringString = ID3Corrector.remove(in: featuringString)
+        if self.featSignal?.hasPrefix("(") == true {
+            featuringString = featuringString.trimmingCharacters(in: CharacterSet(charactersIn: ")"))
+        }
+        return featuringString
+    }
+    
+    var producedBy: String? {
+        guard let candidate = raw.component(after: ID3Corrector.producedBy) else { return nil }
+        var producedByString = candidate.component(before: ID3Corrector.feats) ?? candidate
+        producedByString = producedByString.removingRedundantWhitespaces
+        producedByString = producedByString.replacing(ID3Corrector.replacements)
+        producedByString = ID3Corrector.remove(in: producedByString)
+        if self.featSignal?.hasPrefix("(") == true {
+            producedByString = producedByString.trimmingCharacters(in: CharacterSet(charactersIn: ")"))
+        }
+        return producedByString
+    }
+    
+    var formatted: String {
+        
+        var title = self.title
+        
+        if let featuring = self.featuring {
+            title += " (feat. \(featuring))"
+        }
+        
+        if let producedBy = self.producedBy {
+            title += " (Prod. by \(producedBy))"
+        }
+        
+        return title
+    }
+}
+
+// ===-----------------------------------------------------------------------------------------------------------===
+//
 // MARK: - Extension FileManager
 // ===-----------------------------------------------------------------------------------------------------------===
 
@@ -20,7 +91,7 @@ extension FileManager {
     // MARK: - URLs
     
     /// Reference to the `URL` of the main directory.
-    static let mainDirectoryURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".tag-corrector", isDirectory: true)
+    static let mainDirectoryURL = `default`.homeDirectoryForCurrentUser.appendingPathComponent(".tag-corrector", isDirectory: true)
     
     /// Reference to the file containing genre corrections.
     static var incorrectGenresFileURL = fileURL(for: "incorrect-genres")
@@ -127,6 +198,30 @@ extension String {
         })
     }
     
+    func find(oneOf words: [String]) -> String? {
+        return words.first(where: { self.contains(" \($0) ") })
+    }
+    
+    func component(after words: [String]) -> String? {
+        if let found = self.find(oneOf: words), let suffixCandidate = self.components(separatedBy: " \(found) ").last {
+            if found.hasPrefix("("), suffixCandidate.hasSuffix(")") {
+                return suffixCandidate.trimmingCharacters(in: CharacterSet(charactersIn: ")"))
+            } else {
+                return suffixCandidate
+            }
+        } else {
+            return nil
+        }
+    }
+    
+    func component(before words: [String]) -> String? {
+        if let found = self.find(oneOf: words), let candidate = self.components(separatedBy: " \(found) ").first {
+            return candidate
+        } else {
+            return nil
+        }
+    }
+    
     
     // MARK: - Command line output
     
@@ -150,7 +245,7 @@ extension Array where Element == String {
     }
     
     /// Return an array with empty lines and line starting with `"#"` are filtered out.
-    var cleaned: Array {
+    var removeEmptyAndCommentLines: Array {
         return self.trimmed.filter({ !$0.isEmpty && !$0.hasPrefix("#") })
     }
 }
@@ -220,7 +315,7 @@ struct ID3Corrector {
     static var replacements = dictionary(at: FileManager.replacementsFile)
     
     /// A collection of incorrect `feat.` notations.
-    static var feats = lines(at: FileManager.incorrectFeaturesFileURL) + [feat]
+    static var feats = lines(at: FileManager.incorrectFeaturesFileURL)
     
     /// A collection of incorrect `"Prod. by"` notations.
     static var producedBy = lines(at: FileManager.incorrectProducedByFileURL) + [prodBy]
@@ -236,32 +331,21 @@ struct ID3Corrector {
     /// Returns the corrected version of the given name.
     static func correctName(_ name: String) -> String {
         
-        let originalName = name
-        var name = name
+        let originalName = name.reaplacingBrackets
         let comps = name.components(separatedBy: " - ")
         
         guard comps.count == 1 else {
             return comps.compactMap(correctName).joined(separator: " - ")
         }
         
-        name = name.reaplacingBrackets
-        name = name.removingRedundantWhitespaces
-        name = replaceFeat(name: &name)
-        name = replaceProducedBy(name: &name)
-        name = name.replacing(replacements)
+        let trackTitle = TrackTitle(raw: originalName)
         
-        
-        // for now its to dangerous to correct names with both 'feat.' and 'Prod. by'
-        if (name.contains(feat) && name.contains(prodBy)) && name.hasSuffix("))") {
-            return originalName
-        }
-        
-        return name
+        return trackTitle.formatted.replacing(replacements)
     }
     
     /// Removes all occurences of the words from the file at the given `URL` in the given name.
     static func remove(wordsAt url: URL = FileManager.removementsFile, in name: String) -> String {
-        return lines(at: FileManager.removementsFile).reduce(name, { name, word in
+        return lines(at: url).reduce(name, { name, word in
             name.replacingOccurrences(of: word, with: "")
         }).trimmed.removingDoubleWhitespaces
     }
@@ -300,7 +384,7 @@ struct ID3Corrector {
     
     /// Returns the lines of the file at the given `URL`.
     static func lines(at url: URL) -> [String] {
-        return content(at: url)?.lines.cleaned ?? []
+        return content(at: url)?.lines.removeEmptyAndCommentLines ?? []
     }
     
     /// Returns a dictionary containing key value pairs from the file at the given `URL`.  Keys and values are separated by an `"="` sign.
