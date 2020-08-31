@@ -37,6 +37,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "80D6CFBD22FCBB26004454F6"
+               BuildableName = "ID3TagCorrectorTests.xctest"
+               BlueprintName = "ID3TagCorrectorTests"
+               ReferencedContainer = "container:ID3TagCorrector.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

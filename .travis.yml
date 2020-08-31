@@ -1,5 +1,5 @@
 language: objective-c
 xcode_project: ID3TagCorrector.xcodeproj
-xcode_scheme: ID3TagCorrector
-script: xcodebuild -scheme ID3TagCorrector test
+xcode_scheme: tag-corrector
+script: xcodebuild -scheme tag-corrector test
 osx_image: xcode11.5
