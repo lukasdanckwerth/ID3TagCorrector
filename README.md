@@ -13,3 +13,8 @@ COMMANDS:
    --version                Print the version of tag-corrector
 
 ```
+
+
+### Makefile
+
+There is a ```Makefile``` for convenient installing and testing outside of xcode on the command line. 

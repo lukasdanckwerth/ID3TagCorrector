@@ -1,5 +1,5 @@
 //
-//  ID3CorrectorTests.swift
+//  ID3Corrector_Test_CorrectTitle.swift
 //  ID3CorrectorTests
 //
 //  Created by Lukas Danckwerth on 08.08.19.
@@ -8,37 +8,7 @@
 
 import XCTest
 
-class ID3CorrectorTests: XCTestCase {
-    
-    lazy var bundle = Bundle(for: ID3CorrectorTests.self)
-    
-    lazy var removementsFileURL = bundle.url(forResource: "removements", withExtension: "txt")!
-    
-    lazy var replacementsFileURL = bundle.url(forResource: "replacements", withExtension: "txt")!
-    
-    lazy var incorrectGenresFileURL = bundle.url(forResource: "incorrect-genres", withExtension: "txt")!
-    
-    lazy var incorrectFeaturesFileURL = bundle.url(forResource: "incorrect-features", withExtension: "txt")!
-    
-    lazy var incorrectProducedByFileURL = bundle.url(forResource: "incorrect-produced-by", withExtension: "txt")!
-    
-    override func setUp() {
-        ID3Corrector.replacements = ID3Corrector.dictionary(at: replacementsFileURL)
-        ID3Corrector.genres = ID3Corrector.dictionary(at: incorrectGenresFileURL)
-        ID3Corrector.feats = ID3Corrector.lines(at: incorrectFeaturesFileURL)
-        ID3Corrector.producedBy = ID3Corrector.lines(at: incorrectProducedByFileURL)
-        FileManager.removementsFile = removementsFileURL
-    }
-    
-    func testGenreCorrection() {
-        
-        let wrongHipHopList = [ "hip hop", "hip-hop", "Hip-Hop", "Rap", "Rap / Hip Hop" ]
-        
-        for wrongHipHop in wrongHipHopList {
-            let corrected = ID3Corrector.correctGenre(wrongHipHop)
-            XCTAssert(corrected == "Hip Hop", "Expected '\(wrongHipHop)' to be corrected as 'Hip Hop'.")
-        }
-    }
+class ID3Corrector_Test_CorrectTitle: ID3Corrector_Test {
     
     func testNameCorrection() {
         
@@ -132,45 +102,5 @@ class ID3CorrectorTests: XCTestCase {
     func textCorrection(_ name: String,_ expectation: String) {
         let corrected = ID3Corrector.correctName(name)
         assert(name, corrected, isEqual: expectation, after: "Correct Name")
-    }
-    
-    // ===-----------------------------------------------------------------------------------------------------------===
-    //
-    // MARK: - Remove
-    // ===-----------------------------------------------------------------------------------------------------------===
-    
-    func testRemovements() {
-        remove("Ferge X Fisherman – Backstage // JUICE PREMIERE",
-               "Ferge X Fisherman – Backstage")
-        remove("The Buttertones - \"Denial You Win Again\" (Official Video)",
-               "The Buttertones - \"Denial You Win Again\"")
-        remove("HAFTBEFEHL - 1999 Part.5 (prod. von Bazzazian) [Official Audio]",
-               "HAFTBEFEHL - 1999 Part.5 (prod. von Bazzazian)")
-        remove("Gabber Eleganza & HDMIRROR – Frozen Dopamina (Official Video) [LFEK008]",
-               "Gabber Eleganza & HDMIRROR – Frozen Dopamina [LFEK008]")
-        remove("Moses Sumney - Cut Me | A COLORS SHOW",
-               "Moses Sumney - Cut Me")
-    }
-    
-    func remove(_ name: String, _ expectation: String) {
-        let removed = ID3Corrector.remove(wordsAt: removementsFileURL, in: name)
-        assert(name, removed, isEqual: expectation, after: "Remove")
-    }
-    
-    // ===-----------------------------------------------------------------------------------------------------------===
-    //
-    // MARK: - Auxiliary
-    // ===-----------------------------------------------------------------------------------------------------------===
-    
-    func assert(_ name: String, _ corrected: String, isEqual expectation: String, after operation: String) {
-        XCTAssert(corrected == expectation, """
-            \n\n
-            Error during \(operation)
-            
-            Source     \(name)
-            Removed    \(corrected)
-            Expected   \(expectation)
-            \n
-            """)
     }
 }

@@ -5,10 +5,14 @@
 //  ID3TagCorrector
 //
 //  Created by Lukas Danckwerth on 08.08.19.
-//  Copyright © 2019 Lukas Danckwerth. All rights reserved.
+//  Copyright © 2019, 2020, 2021 Lukas Danckwerth. All rights reserved.
+//
+//  Maintainer:    Lukas Danckwerth <lukas.danckwerth@gmx.de>
 //
 
 import Foundation
+
+let version = "0.1.1"
 
 // ===-----------------------------------------------------------------------------------------------------------===
 //
@@ -17,6 +21,8 @@ import Foundation
 
 struct TrackTitle {
     var raw: String
+    
+    // MARK: Computed Properties
     
     var title: String {
         let onlyTitle: String
@@ -51,7 +57,7 @@ struct TrackTitle {
         if self.featSignal?.hasPrefix("(") == true {
             featuringString = featuringString.trimmingCharacters(in: CharacterSet(charactersIn: ")"))
         }
-        return featuringString
+        return featuringString.trimmed
     }
     
     var producedBy: String? {
@@ -63,7 +69,7 @@ struct TrackTitle {
         if self.featSignal?.hasPrefix("(") == true {
             producedByString = producedByString.trimmingCharacters(in: CharacterSet(charactersIn: ")"))
         }
-        return producedByString
+        return producedByString.trimmed
     }
     
     var formatted: String {
@@ -71,11 +77,11 @@ struct TrackTitle {
         var title = self.title
         
         if let featuring = self.featuring {
-            title += " (feat. \(featuring))"
+            title += " (\(ID3Corrector.feat) \(featuring))"
         }
         
         if let producedBy = self.producedBy {
-            title += " (Prod. by \(producedBy))"
+            title += " (\(ID3Corrector.prodBy) \(producedBy))"
         }
         
         return title
@@ -92,7 +98,16 @@ extension FileManager {
     // MARK: - URLs
     
     /// Reference to the `URL` of the main directory.
-    static let mainDirectoryURL = `default`.homeDirectoryForCurrentUser.appendingPathComponent(".tag-corrector", isDirectory: true)
+    static let mainDirectoryURL = `default`
+        .homeDirectoryForCurrentUser
+        .appendingPathComponent(".tag-corrector", isDirectory: true)
+    
+    /// Reference to the `URL` of tools application support directory in the library folder.
+    static let applicationSuportDirectory = `default`
+        .homeDirectoryForCurrentUser
+        .appendingPathComponent("Library", isDirectory: true)
+        .appendingPathComponent("Application Support", isDirectory: true)
+        .appendingPathComponent("de.aid.tag-corrector", isDirectory: true)
     
     /// Reference to the file containing genre corrections.
     static var incorrectGenresFileURL = fileURL(for: "incorrect-genres")
@@ -114,13 +129,20 @@ extension FileManager {
     
     /// Returns a `URL` to the text file (`".txt"`) with the given name in the main directory.
     static func fileURL(for fileName: String) -> URL {
-        return mainDirectoryURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+        let candidate = applicationSuportDirectory.appendingPathComponent(fileName).appendingPathExtension("txt")
+        return `default`.fileExists(atPath: candidate.path) ? candidate : mainDirectoryURL
+            .appendingPathComponent(fileName)
+            .appendingPathExtension("txt")
     }
     
     /// Creates the directory at the given `URL` if it doesn't already exist.
     func createDirectoryIfNotExisting(_ directoryURL: URL) {
         if !fileExists(atPath: directoryURL.path) {
-            try? createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
+            do {
+                try createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print(error)
+            }
         }
     }
 }
@@ -258,12 +280,15 @@ extension Array where Element == String {
 
 /// The string containing a help text for this tool.
 let help = """
+
 usage: tag-corrector <command> [<args>]
 
 COMMANDS:
 
 \("   ")\("correctGenre".bold)  <genre>     Corrects the passed genre
 \("   ")\("correctName".bold)  <name>       Corrects the passed name
+\("   ")\("getArtist".bold)  <text>         Extracts the artist from the given text.
+\("   ")\("getFeature".bold)  <text>        Extracts the feature from the given text.
 \("   ")\("remove".bold)  <file> <name>     Removes all words in the given file from the given name
 
 \("   ")\("--help".bold)                   Print this help text and exit
@@ -279,13 +304,8 @@ COMMANDS:
 
 /// Prints the given message and exits with the given exit code.
 func exit(_ message: String, exitCode: Int32 = EXIT_SUCCESS, withHelpMessage flag: Bool = false) -> Never {
-    
-    if flag {
-        print(message, "\n\nPass '--help' for a list of available commands\n")
-    } else {
-        print(message)
-    }
-    
+    print(message)
+    if flag { print("\n\nPass '--help' for a list of available commands\n") }
     exit(exitCode)
 }
 
@@ -309,22 +329,23 @@ struct ID3Corrector {
     
     // MARK: - Properties
     
-    /// A dictionary of incorrect genres with their correction.
+    /// A dictionary of incorrect genres with their correction.  Read from the "incorrect-genres" file.
     static var genres = dictionary(at: FileManager.incorrectGenresFileURL)
     
-    /// A map containing key value pairs with words to replace.
+    /// A map containing key value pairs with words to replace.  Read from the "replacements" file.
     static var replacements = dictionary(at: FileManager.replacementsFile)
     
-    /// A collection of incorrect `feat.` notations.
+    /// A collection of incorrect `feat.` notations.  Read from the "incorrect-feat" file.
     static var feats = lines(at: FileManager.incorrectFeaturesFileURL)
     
-    /// A collection of incorrect `"Prod. by"` notations.
+    /// A collection of incorrect `"Prod. by"` notations.  Read from the "incorrect-produced-by" file.
     static var producedBy = lines(at: FileManager.incorrectProducedByFileURL) + [prodBy]
     
     
     // MARK: - Correction Functionality
     
-    /// Returns the corrected version of the given genre.  Iterates the `genre` map and returns the first entry where the given genre matches the key.
+    /// Returns the corrected version of the given genre.  Iterates the `genre` map and returns the first
+    /// entry where the given genre matches the key.
     static func correctGenre(_ genre: String) -> String {
         return genres.first(where: { genre == $0.key })?.value ?? genre
     }
@@ -349,6 +370,14 @@ struct ID3Corrector {
         return lines(at: url).reduce(name, { name, word in
             name.replacingOccurrences(of: word, with: "")
         }).trimmed.removingDoubleWhitespaces
+    }
+    
+    static func getFeature(_ name: String) -> String? {
+        return TrackTitle(raw: name).featuring
+    }
+    
+    static func getArtist(_ name: String) -> String {
+        return TrackTitle(raw: name).title
     }
     
     
@@ -434,13 +463,14 @@ func nextArgument(onError message: String) -> String {
 // MARK: - Preconditions
 // ===-----------------------------------------------------------------------------------------------------------===
 
-// receive command
-let command = nextArgument(onError: "No arguments given")
-
 // create main directory if it doesn't exist
 FileManager.default.createDirectoryIfNotExisting(FileManager.mainDirectoryURL)
+FileManager.default.createDirectoryIfNotExisting(FileManager.applicationSuportDirectory)
 
+// receive command
+let command = nextArgument(onError: "No arguments given.")
 
+// holds the formatted output
 var output: String?
 
 
@@ -452,18 +482,28 @@ var output: String?
 switch command {
 case "correctGenre":
     
-    let genre = nextArgument(onError: "No genre specified")
+    let genre = nextArgument(onError: "No genre specified.")
     output = ID3Corrector.correctGenre(genre).trimmed
     
 case "correctName":
     
-    let name = nextArgument(onError: "No name specified")
+    let name = nextArgument(onError: "No name specified.")
     output = ID3Corrector.correctName(name).trimmed
+    
+case "getArtist":
+    
+    let name = nextArgument(onError: "No text specified.")
+    output = ID3Corrector.getArtist(name).trimmed
+    
+case "getFeature":
+    
+    let name = nextArgument(onError: "No text specified.")
+    output = ID3Corrector.getFeature(name)?.trimmed
     
 case "remove":
     
-    let filePath = nextArgument(onError: "No path to text file specified")
-    let name = nextArgument(onError: "No name specified")
+    let filePath = nextArgument(onError: "No path to text file specified.")
+    let name = nextArgument(onError: "No name specified.")
     let url = URL(fileURLWithPath: filePath)
     
     output = ID3Corrector.remove(wordsAt: url, in: name).trimmed
@@ -474,7 +514,7 @@ case "--help", "-h":
     
 case "--version", "-v":
     
-    exit("0.0.6")
+    exit(version)
     
 default:
     

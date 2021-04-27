@@ -1,3 +1,6 @@
+# Text in this file is used by the 'remove' command of tag-corrector.
+# The String of each line is searched in a title and removed when found.
+# Comments (lines starting with #) and blank lines are ignored.
 (Official 4K Video)
 [Official 4K Video]
 (Official Video)

@@ -12,10 +12,15 @@
 		8027524224FC163200BC30B5 /* incorrect-produced-by.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8027523D24FC163200BC30B5 /* incorrect-produced-by.txt */; };
 		8027524324FC163200BC30B5 /* removements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8027523E24FC163200BC30B5 /* removements.txt */; };
 		8027524424FC163200BC30B5 /* replacements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8027523F24FC163200BC30B5 /* replacements.txt */; };
+		8065407F262B77B500077240 /* ID3Corrector_Test_Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065407E262B77B500077240 /* ID3Corrector_Test_Remove.swift */; };
+		80654083262B77D600077240 /* ID3Corrector_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80654082262B77D600077240 /* ID3Corrector_Test.swift */; };
+		80654089262B782D00077240 /* ID3Corrector_Test_CorrectGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80654088262B782D00077240 /* ID3Corrector_Test_CorrectGenre.swift */; };
 		8065FED12466A106003B3587 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
 		8089CEF523C814BC00513935 /* tag-corrector in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80D6CFAA22FCA411004454F6 /* tag-corrector */; };
+		80AA8C44262C6A0A004DC254 /* ID3Corrector_Test_ReceiveArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AA8C43262C6A0A004DC254 /* ID3Corrector_Test_ReceiveArtist.swift */; };
 		80D6CFAD22FCA411004454F6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFAC22FCA411004454F6 /* main.swift */; };
-		80D6CFC122FCBB26004454F6 /* ID3CorrectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */; };
+		80D6CFC122FCBB26004454F6 /* ID3Corrector_Test_CorrectTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6CFC022FCBB26004454F6 /* ID3Corrector_Test_CorrectTitle.swift */; };
+		80FC346F262B732100AC195C /* ID3Corrector_Test_ReceiveFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC346E262B732100AC195C /* ID3Corrector_Test_ReceiveFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +53,18 @@
 		8027523D24FC163200BC30B5 /* incorrect-produced-by.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "incorrect-produced-by.txt"; sourceTree = "<group>"; };
 		8027523E24FC163200BC30B5 /* removements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = removements.txt; sourceTree = "<group>"; };
 		8027523F24FC163200BC30B5 /* replacements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = replacements.txt; sourceTree = "<group>"; };
+		8065407E262B77B500077240 /* ID3Corrector_Test_Remove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector_Test_Remove.swift; sourceTree = "<group>"; };
+		80654082262B77D600077240 /* ID3Corrector_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector_Test.swift; sourceTree = "<group>"; };
+		80654088262B782D00077240 /* ID3Corrector_Test_CorrectGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector_Test_CorrectGenre.swift; sourceTree = "<group>"; };
+		80AA8C43262C6A0A004DC254 /* ID3Corrector_Test_ReceiveArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector_Test_ReceiveArtist.swift; sourceTree = "<group>"; };
 		80D6CFAA22FCA411004454F6 /* tag-corrector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "tag-corrector"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D6CFAC22FCA411004454F6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		80D6CFBE22FCBB26004454F6 /* tag-corrector tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tag-corrector tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3CorrectorTests.swift; sourceTree = "<group>"; };
+		80D6CFC022FCBB26004454F6 /* ID3Corrector_Test_CorrectTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector_Test_CorrectTitle.swift; sourceTree = "<group>"; };
 		80D6CFC222FCBB26004454F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80FC346A262B5D0F00AC195C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		80FC346B262B5D0F00AC195C /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		80FC346E262B732100AC195C /* ID3Corrector_Test_ReceiveFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3Corrector_Test_ReceiveFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,8 @@
 		806354461DB3C45F00E4B78F = {
 			isa = PBXGroup;
 			children = (
+				80FC346B262B5D0F00AC195C /* Makefile */,
+				80FC346A262B5D0F00AC195C /* README.md */,
 				800C9D9524FD690200C28715 /* .travis.yml */,
 				80D6CFAB22FCA411004454F6 /* ID3TagCorrector */,
 				80D6CFBF22FCBB26004454F6 /* ID3TagCorrectorTests */,
@@ -115,30 +129,19 @@
 		80D6CFBF22FCBB26004454F6 /* ID3TagCorrectorTests */ = {
 			isa = PBXGroup;
 			children = (
-				8027523A24FC163200BC30B5 /* Test Data */,
-				80D6CFC022FCBB26004454F6 /* ID3CorrectorTests.swift */,
+				80654088262B782D00077240 /* ID3Corrector_Test_CorrectGenre.swift */,
+				80D6CFC022FCBB26004454F6 /* ID3Corrector_Test_CorrectTitle.swift */,
+				80AA8C43262C6A0A004DC254 /* ID3Corrector_Test_ReceiveArtist.swift */,
+				80FC346E262B732100AC195C /* ID3Corrector_Test_ReceiveFeature.swift */,
+				8065407E262B77B500077240 /* ID3Corrector_Test_Remove.swift */,
+				80654082262B77D600077240 /* ID3Corrector_Test.swift */,
 				80D6CFC222FCBB26004454F6 /* Info.plist */,
+				8027523A24FC163200BC30B5 /* Test Data */,
 			);
 			path = ID3TagCorrectorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXLegacyTarget section */
-		80711FCF24FD6AED00FEF9DC /* tag-corrector deployment */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 80711FD024FD6AED00FEF9DC /* Build configuration list for PBXLegacyTarget "tag-corrector deployment" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/bin/make;
-			dependencies = (
-			);
-			name = "tag-corrector deployment";
-			passBuildSettingsInEnvironment = 1;
-			productName = "tag-corrector deployment";
-		};
-/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		80D6CFA922FCA411004454F6 /* tag-corrector */ = {
@@ -187,10 +190,6 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Lukas Danckwerth";
 				TargetAttributes = {
-					80711FCF24FD6AED00FEF9DC = {
-						CreatedOnToolsVersion = 11.6;
-						ProvisioningStyle = Automatic;
-					};
 					80D6CFA922FCA411004454F6 = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1150;
@@ -218,7 +217,6 @@
 			targets = (
 				80D6CFA922FCA411004454F6 /* tag-corrector */,
 				80D6CFBD22FCBB26004454F6 /* tag-corrector tests */,
-				80711FCF24FD6AED00FEF9DC /* tag-corrector deployment */,
 			);
 		};
 /* End PBXProject section */
@@ -271,8 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8065407F262B77B500077240 /* ID3Corrector_Test_Remove.swift in Sources */,
+				80654089262B782D00077240 /* ID3Corrector_Test_CorrectGenre.swift in Sources */,
 				8065FED12466A106003B3587 /* main.swift in Sources */,
-				80D6CFC122FCBB26004454F6 /* ID3CorrectorTests.swift in Sources */,
+				80654083262B77D600077240 /* ID3Corrector_Test.swift in Sources */,
+				80D6CFC122FCBB26004454F6 /* ID3Corrector_Test_CorrectTitle.swift in Sources */,
+				80FC346F262B732100AC195C /* ID3Corrector_Test_ReceiveFeature.swift in Sources */,
+				80AA8C44262C6A0A004DC254 /* ID3Corrector_Test_ReceiveArtist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,44 +399,6 @@
 			};
 			name = Release;
 		};
-		80711FD124FD6AED00FEF9DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		80711FD224FD6AED00FEF9DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				MTL_FAST_MATH = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		80D6CFAF22FCA411004454F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -530,15 +495,6 @@
 			buildConfigurations = (
 				806354541DB3C46000E4B78F /* Debug */,
 				806354551DB3C46000E4B78F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		80711FD024FD6AED00FEF9DC /* Build configuration list for PBXLegacyTarget "tag-corrector deployment" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80711FD124FD6AED00FEF9DC /* Debug */,
-				80711FD224FD6AED00FEF9DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
